@@ -1,0 +1,33 @@
+.lista{
+
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    color: rgb(25, 45, 85); /* Color azul oscuro */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2), 0 0 25px rgba(50, 150, 255, 0.6); /* Sombra para dar profundidad */
+    background: linear-gradient(135deg, rgb(101, 149, 221), rgb(98, 231, 129)); /* Gradiente de fondo */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 20px 0; /* Espaciado externo */
+    text-align: center; /* Alinear el texto al centro */
+}
+
+li{
+    background-color: rgb(255, 255, 255); /* Verde suave */
+    color: #000000; /* Texto negro */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    list-style: none; 
+    text-transform: uppercase;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}

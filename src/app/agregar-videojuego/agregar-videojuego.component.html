@@ -1,1 +1,13 @@
-<p>agregar-videojuego works!</p>
+
+
+<div class="addVideojuego">
+
+    <h3>Add Videogame</h3>
+    
+            <input #videojuegoName placeholder="Name">
+            <input #videojuegoType placeholder="type">
+            <input #videojuegoYear placeholder="Year">
+            <input #videojuegoPlatform placeholder="platform">
+
+    <button (click) ="addVideojuego(videojuegoName.value, videojuegoType.value, videojuegoYear.value, videojuegoPlatform.value)">Add videogame</button>
+</div>

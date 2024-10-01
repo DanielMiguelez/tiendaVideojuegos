@@ -1,10 +1,13 @@
-<div class="addVideojuego">
-    <h3>Add Videogame</h3>
-            <input #videojuegoName placeholder="Name">
-            <input #videojuegoType placeholder="type">
-            <input #videojuegoYear placeholder="year">
-            <input #videojuegoPlatform placeholder="platform">
 
 
-    <button (click) ="addVideojuego(videojuegoName.value, videojuegoType.value, videojuegoYear.value, videojuegoPlatform.value)">Add videogame</button>
+<div class="lista">
+    <h2>Game</h2>
+
+    <p *ngIf="videojuegos.length === 0"> No hay Videojuegos</p>
+    <ul>
+        <li *ngFor="let videojuego of videojuegos,
+            let i = index">
+            {{videojuego.name}} - Tipo: {{videojuego.type}} - Año: {{videojuego.year}} - Plataforma: {{videojuego.platform}} 
+        </li>
+    </ul>
 </div>

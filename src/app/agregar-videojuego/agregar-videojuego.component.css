@@ -1,0 +1,49 @@
+.addVideojuego{
+    background-color: #1e1e1e; /* Fondo gris oscuro para el contenedor */
+    padding: 30px; /* Espaciado interno */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar contenido */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra elegante */
+    max-width: 400px; /* Ancho máximo del contenedor */
+    margin: 40px auto; /* Centrarse en la página con margen superior */
+
+}
+
+input{
+    width: 100%; /* Ancho completo del input */
+    max-width: 350px; /* Ancho máximo del input */
+    padding: 10px; /* Espaciado interno */
+    margin: 10px 0; /* Margen arriba y abajo */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #292929; /* Fondo de input gris oscuro */
+    color: #ffffff; /* Color de texto blanco */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+.input::placeholder {
+    color: #f7ff06; /* Color del texto del placeholder */
+}
+
+button{
+
+    width: 100%; /* Ancho completo del botón */
+    max-width: 350px; /* Ancho máximo del botón */
+    padding: 10px; /* Espaciado interno */
+    margin-top: 15px; /* Margen superior */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #00bcd4; /* Color de fondo del botón */
+    color: #ffffff; /* Color del texto */
+    font-size: 16px; /* Tamaño de fuente */
+    
+}
+
+
+h3{
+    color: #f7ff06;
+    text-transform: uppercase;
+}
