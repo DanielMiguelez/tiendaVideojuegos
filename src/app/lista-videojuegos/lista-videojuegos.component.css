@@ -9,17 +9,6 @@
     text-align: center;
 }
 
-h2 {
-    font-size: 2.5em; /* Tamaño de la fuente */
-    font-weight: bold; /* Negrita */
-    color: rgb(25, 45, 85); /* Color azul oscuro */
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2), 0 0 25px rgba(50, 150, 255, 0.6); /* Sombra para dar profundidad */
-    background: linear-gradient(135deg, rgb(101, 149, 221), rgb(98, 231, 129)); /* Gradiente de fondo */
-    padding: 10px 20px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
-    margin: 20px 0; /* Espaciado externo */
-    text-align: center; /* Alinear el texto al centro */
-}
 
 li{
     background-color: rgb(255, 255, 255); /* Verde suave */
@@ -30,4 +19,27 @@ li{
     list-style: none; 
     text-transform: uppercase;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+button{
+    display: inline-block; /* Permite que el botón tenga dimensiones específicas */
+    padding: px 3px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: bold; /* Texto en negrita */
+    text-align: center; /* Centra el texto */
+    text-decoration: none; /* Sin subrayado */
+    color: #ffffff; /* Color del texto */
+    background-color: #007bff; /* Color de fondo del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+    transform: translateY(-2px); /* Eleva ligeramente el botón */
 }

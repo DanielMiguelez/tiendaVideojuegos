@@ -1,4 +1,21 @@
-/* You can add global styles to this file, and also import other style files */body{
-    background: linear-gradient(135deg, rgb(101, 149, 221), rgb(98, 231, 129));
+/* You can add global styles to this file, and also import other style files */
 
+html, body{
+    background: linear-gradient(135deg, rgb(101, 149, 221), rgb(98, 231, 129));
+    height: 100%;
+  margin: 0;
+  padding: 0;
 }
+
+footer {
+    background: linear-gradient(145deg, #2b6ee9, #7b99ce); /* Gradiente azul metálico */
+  color: #f0f0f0; /* Texto claro */
+  padding: 40px 0;
+  text-align: center;
+  border-top: 5px solid #1c2e5a; /* Línea superior más oscura */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Sombra */
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  width: 100%; /* Asegura que el footer ocupe el 100% del ancho */
+  bottom: 0; /* Anclado a la parte inferior */
+  }

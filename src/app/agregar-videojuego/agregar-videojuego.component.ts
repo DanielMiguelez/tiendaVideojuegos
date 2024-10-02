@@ -14,6 +14,10 @@ export class AgregarVideojuegoComponent {
 
   tiposVideojuego: string[] = ['Rol', 'Terror', 'FPS', 'TPS', 'Survival Horror', 'Aventura gráfica', 'RPG' ];
 
+  tiposPlataforma: string[] = ['PC','PlayStation 5','Xbox Series X','Nintendo Switch'
+  ,'PC VR','PlayStation 4','Xbox One','Nintendo 3DS','iOS','Android','Xbox 360',
+  'PlayStation Vita','Game Boy','Sega Genesis','Atari',];
+
   constructor(private TiendaVideojuegosService : TiendaVideojuegosService){}
 
   

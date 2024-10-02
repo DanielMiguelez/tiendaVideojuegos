@@ -4,6 +4,18 @@ body {
     margin: 0; /* Eliminar márgenes del cuerpo */
 }
 
+h2 {
+    font-size: 2.5em; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    color: rgb(25, 45, 85); /* Color azul oscuro */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2), 0 0 25px rgba(50, 150, 255, 0.6); /* Sombra para dar profundidad */
+    background: linear-gradient(135deg, rgb(101, 149, 221), rgb(98, 231, 129)); /* Gradiente de fondo */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 20px 0; /* Espaciado externo */
+    text-align: center; /* Alinear el texto al centro */
+}
+
 
 .enlaces{
     max-width: 600px; /* Ancho máximo del contenedor */
@@ -22,13 +34,11 @@ body {
 a{
     all: unset;
     text-transform: uppercase;
-    background-color: antiquewhite;
+    background-color: rgb(26, 125, 211);
     padding: 10px;
     border-radius: 10px;
     box-shadow: 5px solid black;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    margin: 10px;
 }
 
-a:hover {
-    background-color: #2f73b7; /* Color más oscuro al pasar el ratón */
-}

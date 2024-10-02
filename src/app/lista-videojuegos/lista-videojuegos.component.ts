@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {TiendaVideojuegosService} from '../tienda-videojuegos.service';
 
 
@@ -12,7 +12,7 @@ import {TiendaVideojuegosService} from '../tienda-videojuegos.service';
   styleUrl: './lista-videojuegos.component.css'
 })
 
-export class ListaVideojuegosComponent {
+export class ListaVideojuegosComponent implements OnInit{
 
   tiposVideojuego: string[] = ['Rol', 'Terror', 'FPS', 'TPS', 'Survival Horror', 'Aventura gráfica', 'RPG' ];
 
@@ -26,9 +26,8 @@ export class ListaVideojuegosComponent {
     this.videojuegos = this.TiendaVideojuegosService.getVideojuegos();
   }
 
- addVideojuego(name:string, type:string, year:string, platform:string){
-  
-   this.TiendaVideojuegosService.addVideojuego({name, type, year, platform})
+  deleteVideojuego(index:number){
+    this.videojuegos.splice(index,1);
   }
 
 }

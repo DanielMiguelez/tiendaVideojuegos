@@ -28,6 +28,18 @@ input{
     color: #f7ff06; /* Color del texto del placeholder */
 }
 
+select {
+    font-size: 16px; /* Cambia el tamaño de fuente */
+    padding: 10px; /* Espaciado interior */
+    width: 370px; /* Ancho del select */
+    height: auto; /* La altura se ajusta automáticamente */
+    background-color: #1e2020; /* Color de fondo */
+    border: 1px solid #00796b; /* Borde del select */
+    border-radius: 5px; /* Bordes redondeados */
+            
+    color: #959595; /* Color del texto */
+}
+
 button{
 
     width: 100%; /* Ancho completo del botón */

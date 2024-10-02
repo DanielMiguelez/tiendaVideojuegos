@@ -3,11 +3,17 @@
 <div class="addVideojuego">
 
     <h3>Add Videogame</h3>
-    
+
             <input #videojuegoName placeholder="Name">
-            <input #videojuegoType placeholder="type">
+            <!-- <input #videojuegoType placeholder="type">-->
+            <select #videojuegoType>
+                <option  *ngFor="let tipo of tiposVideojuego" value="{{tipo}}">{{tipo}}</option>
+            </select>
             <input #videojuegoYear placeholder="Year">
-            <input #videojuegoPlatform placeholder="platform">
+            
+            <select #videojuegoPlatform>
+                <option  *ngFor="let plataforma of tiposPlataforma" value="{{plataforma}}">{{plataforma}}</option>
+            </select>
 
     <button (click) ="addVideojuego(videojuegoName.value, videojuegoType.value, videojuegoYear.value, videojuegoPlatform.value)">Add videogame</button>
 </div>

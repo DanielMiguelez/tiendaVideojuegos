@@ -37,7 +37,7 @@ export class TiendaVideojuegosService {
     this.videojuegos.push(videojuego);
   }
 
-  deleteComponent(index: number){
+  deleteVideojuego(index: number){
     this.videojuegos.splice(index, 1);
   }
 
