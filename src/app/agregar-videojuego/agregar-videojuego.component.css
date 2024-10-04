@@ -1,11 +1,13 @@
 .addVideojuego{
-    background-color: #1e1e1e; /* Fondo gris oscuro para el contenedor */
-    padding: 30px; /* Espaciado interno */
+    background: linear-gradient(135deg, #000000, #0a1172);
+
+    padding: 80px; /* Espaciado interno */
     display: flex;
+    gap: 30px;
     flex-direction: column;
     align-items: center; /* Centrar contenido */
     border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra elegante */
+    box-shadow: 0 12px 20px rgba(255, 0, 0, 0.5); /* Sombra elegante */
     max-width: 400px; /* Ancho máximo del contenedor */
     margin: 40px auto; /* Centrarse en la página con margen superior */
 
@@ -24,9 +26,11 @@ input{
     transition: background-color 0.3s; /* Transición suave para el color de fondo */
 }
 
-.input::placeholder {
-    color: #f7ff06; /* Color del texto del placeholder */
+input:hover{
+    background-color: #4b3c3c;
 }
+
+
 
 select {
     font-size: 16px; /* Cambia el tamaño de fuente */
@@ -37,7 +41,11 @@ select {
     border: 1px solid #00796b; /* Borde del select */
     border-radius: 5px; /* Bordes redondeados */
             
-    color: #959595; /* Color del texto */
+    color: #fff700; /* Color del texto */
+}
+
+select:hover{
+    background-color: #4b3c3c;
 }
 
 button{
@@ -48,12 +56,16 @@ button{
     margin-top: 15px; /* Margen superior */
     border: none; /* Sin borde */
     border-radius: 5px; /* Bordes redondeados */
-    background-color: #00bcd4; /* Color de fondo del botón */
-    color: #ffffff; /* Color del texto */
+    background-color: #0043d4; /* Color de fondo del botón */
+    color: #ffe600; /* Color del texto */
     font-size: 16px; /* Tamaño de fuente */
     
 }
 
+button:hover{
+    background-color: yellow;
+    color: blue;
+}
 
 h3{
     color: #f7ff06;

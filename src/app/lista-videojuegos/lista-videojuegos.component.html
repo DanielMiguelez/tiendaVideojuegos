@@ -2,7 +2,6 @@
 
 <div class="lista">
 
-
     <p *ngIf="videojuegos.length === 0"> No hay Videojuegos</p>
     <ul>
         <li *ngFor="let videojuego of videojuegos, let i = index">
@@ -11,7 +10,9 @@
             Año: {{videojuego.year}} <br> 
             Plataforma: {{videojuego.platform}} 
             
-            <button (click)="deleteVideojuego(i)">Eliminar</button>
+            <button (click)="deleteVideojuego(i)">
+                <i class="fas fa-trash"></i> Eliminar
+            </button>
         </li>
     </ul>
 </div>

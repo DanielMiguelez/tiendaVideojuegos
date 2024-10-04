@@ -2,6 +2,12 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente limpia y moderna */
     background-color: #f4f4f4; /* Color de fondo suave */
     margin: 0; /* Eliminar márgenes del cuerpo */
+    
+}
+
+.padre{
+    display: flex;
+    flex-direction: column;
 }
 
 h2 {
@@ -9,36 +15,66 @@ h2 {
     font-weight: bold; /* Negrita */
     color: rgb(25, 45, 85); /* Color azul oscuro */
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2), 0 0 25px rgba(50, 150, 255, 0.6); /* Sombra para dar profundidad */
-    background: linear-gradient(135deg, rgb(101, 149, 221), rgb(98, 231, 129)); /* Gradiente de fondo */
+    background: linear-gradient(135deg, rgb(0, 0, 0), rgb(139, 143, 140)); /* Gradiente de fondo */
     padding: 10px 20px; /* Espaciado interno */
     border-radius: 5px; /* Bordes redondeados */
     margin: 20px 0; /* Espaciado externo */
     text-align: center; /* Alinear el texto al centro */
 }
 
+h3 {
+    color: yellow;
+    font-size: 30px;
+    font-size: 900;
+}
+
+p{
+    color: yellow;
+    font-size: 30px;
+    font-weight: 900;
+}
 
 .enlaces{
-    max-width: 600px; /* Ancho máximo del contenedor */
+    width: 100vh; /* Ancho máximo del contenedor */
     margin: 20px auto; /* Centrar el contenedor en la página */
-    padding: 20px; /* Espaciado interno */
-    background-color: #fff; /* Fondo blanco para el contenedor */
+    padding: 40px; /* Espaciado interno */
+    background:url(../media/SoR1.jpg);
+    background-position: center;
+    background-size: cover;
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
     text-align: center; /* Centrar el contenido dentro del contenedor */
     display: flex; /* Usar flexbox para distribuir los enlaces */
     justify-content: space-around; /* Espacio entre los enlaces */
 
-    
 }
 
 a{
     all: unset;
     text-transform: uppercase;
-    background-color: rgb(26, 125, 211);
-    padding: 10px;
+    background-color: rgb(31, 64, 147);
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 5px solid black;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     margin: 10px;
+    font-weight: 900;
+}
+a:hover{
+    background-color: rgb(159, 159, 32);
+    transform: translateY(-2px);
 }
 
+footer {
+    padding: 20px; /* Espaciado dentro del footer */
+    text-align: center; /* Centra el contenido del footer */
+    position:fixed;
+    height: 20vh;
+    background:url(../media/SoR.jpg);
+    background-position: center;
+    opacity: .7;
+}
+
+footer div{
+    margin: 50px;
+}

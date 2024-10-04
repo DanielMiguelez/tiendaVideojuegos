@@ -1,14 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body{
-    background: linear-gradient(135deg, rgb(101, 149, 221), rgb(98, 231, 129));
+    background:url(./media/techBG.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100%;
   margin: 0;
   padding: 0;
 }
 
 footer {
-    background: linear-gradient(145deg, #2b6ee9, #7b99ce); /* Gradiente azul metálico */
+  background:url(./media/techBG.jpg);
   color: #f0f0f0; /* Texto claro */
   padding: 40px 0;
   text-align: center;
@@ -19,3 +21,4 @@ footer {
   width: 100%; /* Asegura que el footer ocupe el 100% del ancho */
   bottom: 0; /* Anclado a la parte inferior */
   }
+  
