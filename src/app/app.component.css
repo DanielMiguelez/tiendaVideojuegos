@@ -5,10 +5,6 @@ body {
     
 }
 
-.padre{
-    display: flex;
-    flex-direction: column;
-}
 
 h2 {
     font-size: 2.5em; /* Tamaño de la fuente */
@@ -37,7 +33,7 @@ p{
 .enlaces{
     width: 100vh; /* Ancho máximo del contenedor */
     margin: 20px auto; /* Centrar el contenedor en la página */
-    padding: 40px; /* Espaciado interno */
+    padding: 10px; /* Espaciado interno */
     background:url(../media/SoR1.jpg);
     background-position: center;
     background-size: cover;
@@ -66,15 +62,12 @@ a:hover{
 }
 
 footer {
-    padding: 20px; /* Espaciado dentro del footer */
+    padding: 10px; /* Espaciado dentro del footer */
     text-align: center; /* Centra el contenido del footer */
-    position:fixed;
-    height: 20vh;
+    bottom: 0;
+    position: fixed;
+    height: 10vh;
     background:url(../media/SoR.jpg);
     background-position: center;
-    opacity: .7;
 }
 
-footer div{
-    margin: 50px;
-}

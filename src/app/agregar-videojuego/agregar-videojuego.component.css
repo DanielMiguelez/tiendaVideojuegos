@@ -1,9 +1,8 @@
 .addVideojuego{
     background: linear-gradient(135deg, #000000, #0a1172);
-
-    padding: 80px; /* Espaciado interno */
+    padding: 10px; /* Espaciado interno */
     display: flex;
-    gap: 30px;
+    gap: 25px;
     flex-direction: column;
     align-items: center; /* Centrar contenido */
     border-radius: 10px; /* Bordes redondeados */

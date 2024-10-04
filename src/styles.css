@@ -11,6 +11,7 @@ html, body{
 
 footer {
   background:url(./media/techBG.jpg);
+  background-repeat: repeat;
   color: #f0f0f0; /* Texto claro */
   padding: 40px 0;
   text-align: center;

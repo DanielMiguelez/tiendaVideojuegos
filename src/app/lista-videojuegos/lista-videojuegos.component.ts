@@ -27,7 +27,7 @@ export class ListaVideojuegosComponent implements OnInit{
   }
 
   deleteVideojuego(index:number){
-    this.videojuegos.splice(index,1);
+    this.TiendaVideojuegosService.deleteVideojuego(index);
   }
 
 }

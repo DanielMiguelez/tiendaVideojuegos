@@ -8,7 +8,12 @@ export class TiendaVideojuegosService {
   private storageKey = 'videojuegos';
 
   constructor() {
-
+      if(this.isLocalStorageAvailable()){
+        const savedVideogames = localStorage.getItem(this.storageKey);
+        if(savedVideogames){
+          this.videojuegos = JSON.parse(savedVideogames);
+        }
+      }
    }
 
    videojuegos = [
@@ -17,10 +22,6 @@ export class TiendaVideojuegosService {
     { name: 'Counter-Strike', type: 'FPS', year: "1999", platform: 'PC' },
     
   ];
-
-
-
-
 // METODOS 
 
   getVideojuegos(){
@@ -28,11 +29,27 @@ export class TiendaVideojuegosService {
   }
 
   addVideojuego(videojuego :{name: string, type: string, year: string, platform: string}){
+    
+    
     this.videojuegos.push(videojuego);
+    this.saveToLocalStorage();  
   }
 
   deleteVideojuego(index: number){
     this.videojuegos.splice(index, 1);
+    this.saveToLocalStorage();  
+  }
+
+  private saveToLocalStorage(){
+    localStorage.setItem(this.storageKey, JSON.stringify(this.videojuegos));
+  }
+
+  private isLocalStorageAvailable():boolean{
+    try {
+      return typeof window !== 'undefined' && typeof localStorage !== 'undefined';
+    } catch (e) {
+      return false;
+    }
   }
 
 }
