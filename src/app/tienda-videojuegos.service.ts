@@ -17,20 +17,30 @@ export class TiendaVideojuegosService {
    }
 
    videojuegos = [
-    { name: 'Uncharted', type: 'Aventura', year: "2007", platform: 'PS3' },
-    { name: 'Resident Evil', type: 'Terror', year: "1996", platform: 'PS1' },
-    { name: 'Counter-Strike', type: 'FPS', year: "1999", platform: 'PC' },
-    
+    { id: 1, name: 'Uncharted', type: 'Aventura', year: "2007", platform: 'PS3' , descripcion:''},
+    { id:2, name: 'Resident Evil', type: 'Terror', year: "1996", platform: 'PS1', descripcion:''},
+    { id:3, name: 'Counter-Strike', type: 'FPS', year: "1999", platform: 'PC' , descripcion:''},
+
   ];
+
+  // crear array de imagenes
+
 // METODOS 
+
+  getItemById(id:number) : any{
+    return this.videojuegos.find(videojuegos => videojuegos.id === id)
+  }
 
   getVideojuegos(){
     return this.videojuegos;
   }
 
-  addVideojuego(videojuego :{name: string, type: string, year: string, platform: string}){
+  addVideojuego( name: string, type: string, year: string, platform: string, descripcion:string){
     
-    
+    const newId = this.videojuegos.length > 0 ? Math.max(...this.videojuegos.map(videojuego => videojuego.id)) + 1 : 1;
+
+    const videojuego = {id:newId, name, type, year, platform, descripcion};
+
     this.videojuegos.push(videojuego);
     this.saveToLocalStorage();  
   }
@@ -39,6 +49,8 @@ export class TiendaVideojuegosService {
     this.videojuegos.splice(index, 1);
     this.saveToLocalStorage();  
   }
+
+
 
   private saveToLocalStorage(){
     localStorage.setItem(this.storageKey, JSON.stringify(this.videojuegos));

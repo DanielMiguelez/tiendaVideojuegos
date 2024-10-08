@@ -1,0 +1,18 @@
+<div class="padre-details">
+
+<div class="videojuego-detail-container">
+
+    <div class="header">
+        <h2>Detalles Videojuego</h2>
+    </div>
+
+    <div class="videojuego-detalles-tarjeta">
+        <img [src]="videojuego.image" alt="{{ videojuego.name }}" class="videojuego-image">
+        <h3>{{videojuego.name}}</h3>
+        <p>{{videojuego.type}}</p>
+        <p>{{videojuego.descripcion}}</p>
+        <a routerLink="/list">Volver a la lista</a>
+    </div>
+
+</div>
+

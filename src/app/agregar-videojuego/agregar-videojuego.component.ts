@@ -21,8 +21,8 @@ export class AgregarVideojuegoComponent {
   constructor(private TiendaVideojuegosService : TiendaVideojuegosService){}
 
   
-  addVideojuego(name: string, type: string, year: string, platform: string ) {
+  addVideojuego(name: string, type: string, year: string, platform: string, descripcion:string ) {
 
-    this.TiendaVideojuegosService.addVideojuego({ name,type, year, platform });
+    this.TiendaVideojuegosService.addVideojuego(name,type, year, platform, descripcion);
   }
 }

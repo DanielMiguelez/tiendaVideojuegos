@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit} from '@angular/core';
 import {TiendaVideojuegosService} from '../tienda-videojuegos.service';
-
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,9 +16,9 @@ export class ListaVideojuegosComponent implements OnInit{
 
   tiposVideojuego: string[] = ['Rol', 'Terror', 'FPS', 'TPS', 'Survival Horror', 'Aventura gráfica', 'RPG' ];
 
-  videojuegos: {name:string, type:string, year: string, platform: string} []= [];
+  videojuegos: {id:number, name:string, type:string, year: string, platform: string} []= [];
 
-  constructor (private TiendaVideojuegosService : TiendaVideojuegosService){  }
+  constructor (private TiendaVideojuegosService : TiendaVideojuegosService, private router: Router){  }
 
   // metodo para añadir un videojuego
 
@@ -28,6 +28,10 @@ export class ListaVideojuegosComponent implements OnInit{
 
   deleteVideojuego(index:number){
     this.TiendaVideojuegosService.deleteVideojuego(index);
+  }
+
+  verVideojuego(id:number){
+    this.router.navigate(['/videojuego', id]);
   }
 
 }

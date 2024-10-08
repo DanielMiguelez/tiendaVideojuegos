@@ -1,0 +1,50 @@
+h2 {
+    text-transform: uppercase;
+    color: rgb(245, 245, 78);
+}
+
+p{
+    color: white;
+}
+
+a{
+    all: unset;
+    color: blue;
+    cursor: pointer;
+    background-color: aliceblue;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+a:hover{
+    color: rgb(10, 82, 82);
+}
+
+.videojuego-detail-container {
+    margin: 10vh auto; /* Centrado vertical y horizontal */
+    background: linear-gradient(135deg, #3b3b3b, #0a1172);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 50vh;
+    height: 30vh;
+    border: 2px solid rgba(195, 195, 111, 0.8); /* Bordes ligeramente transparentes */
+    border-radius: 15px; /* Esquinas redondeadas */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Sombra más suave y profesional */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
+}
+
+.videojuego-detail-container:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8); /* Sombra más fuerte al hacer hover */
+}
+
+
+.padre-details{
+    height:100vh;
+    display: flex;
+    justify-content: center;
+}
