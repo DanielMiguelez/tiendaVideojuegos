@@ -30,36 +30,8 @@ p{
     font-weight: 900;
 }
 
-.enlaces{
-    width: 100vh; /* Ancho máximo del contenedor */
-    margin: 20px auto; /* Centrar el contenedor en la página */
-    padding: 10px; /* Espaciado interno */
-    background:url(../media/SoR1.jpg);
-    background-position: center;
-    background-size: cover;
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
-    text-align: center; /* Centrar el contenido dentro del contenedor */
-    display: flex; /* Usar flexbox para distribuir los enlaces */
-    justify-content: space-around; /* Espacio entre los enlaces */
 
-}
 
-a{
-    all: unset;
-    text-transform: uppercase;
-    background-color: rgb(31, 64, 147);
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 5px solid black;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    margin: 10px;
-    font-weight: 900;
-}
-a:hover{
-    background-color: rgb(159, 159, 32);
-    transform: translateY(-2px);
-}
 
 footer {
     padding: 10px; /* Espaciado dentro del footer */

@@ -27,9 +27,13 @@ export class TiendaVideojuegosService {
 
 // METODOS 
 
-  getItemById(id:number) : any{
-    return this.videojuegos.find(videojuegos => videojuegos.id === id)
-  }
+getItemById(id: number): any {
+
+  const videojuego = this.videojuegos.find(videojuego => videojuego.id === id);
+  
+  return videojuego;  // Puede ser undefined si no se encuentra
+}
+
 
   getVideojuegos(){
     return this.videojuegos;

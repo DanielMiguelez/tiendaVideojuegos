@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {TiendaVideojuegosService} from '../tienda-videojuegos.service';
+import { TiendaVideojuegosService } from '../../services/tienda-videojuegos.service';
 
 @Component({
   selector: 'app-agregar-videojuego',

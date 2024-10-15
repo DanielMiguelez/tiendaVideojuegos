@@ -12,6 +12,10 @@
         <p>{{videojuego.type}}</p>
         <p>{{videojuego.descripcion}}</p>
         <a routerLink="/list">Volver a la lista</a>
+
+        <div *ngIf="!videojuego">
+            <p>Videojuego no encontrado.</p>
+        </div>
     </div>
 
 </div>

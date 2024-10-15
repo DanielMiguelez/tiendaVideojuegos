@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { TiendaVideojuegosService } from '../tienda-videojuegos.service';
+import { TiendaVideojuegosService } from '../../services/tienda-videojuegos.service';
+
 
 @Component({
   selector: 'app-detalles-videojuego',
