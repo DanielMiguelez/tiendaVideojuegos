@@ -1,0 +1,15 @@
+footer {
+    padding: 10px; /* Espaciado dentro del footer */
+    text-align: center; /* Centra el contenido del footer */
+    bottom: 0;
+    position: fixed;
+    background: url(../../../media/SoR.jpg);
+    height: 10vh;
+    background-position: center;
+}
+
+p{
+    color: yellow;
+    font-size: 30px;
+    font-weight: 900;
+}

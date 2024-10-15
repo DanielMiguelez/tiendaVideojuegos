@@ -24,22 +24,5 @@ h3 {
     font-size: 900;
 }
 
-p{
-    color: yellow;
-    font-size: 30px;
-    font-weight: 900;
-}
 
-
-
-
-footer {
-    padding: 10px; /* Espaciado dentro del footer */
-    text-align: center; /* Centra el contenido del footer */
-    bottom: 0;
-    position: fixed;
-    height: 10vh;
-    background:url(../media/SoR.jpg);
-    background-position: center;
-}
 
