@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
-import {AgregarVideojuegoComponent} from './components/agregar-videojuego/agregar-videojuego.component'
-import { DetallesVideojuegoComponent } from './components/detalles-videojuego/detalles-videojuego.component';
-import { ListaVideojuegosComponent } from './components/lista-videojuegos/lista-videojuegos.component';
+import {AgregarVideojuegoComponent} from './components/main/agregar-videojuego/agregar-videojuego.component'
+import { DetallesVideojuegoComponent } from './components/main/detalles-videojuego/detalles-videojuego.component';
+import { ListaVideojuegosComponent } from './components/main/lista-videojuegos/lista-videojuegos.component';
+
 
 export const routes: Routes = [
     {path:'addVideogame', component: AgregarVideojuegoComponent},

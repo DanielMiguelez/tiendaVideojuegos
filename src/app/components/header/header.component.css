@@ -2,6 +2,7 @@
     width: 100vh; /* Ancho máximo del contenedor */
     margin: 20px auto; /* Centrar el contenedor en la página */
     padding: 10px; /* Espaciado interno */
+    background: url(../../../media/SoR.jpg);
     background-position: center;
     background-color: rgb(9, 49, 80);
     background-size: cover;

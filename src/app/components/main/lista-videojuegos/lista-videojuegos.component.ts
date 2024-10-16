@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit} from '@angular/core';
-
 import { Router } from '@angular/router';
-import { TiendaVideojuegosService } from '../../services/tienda-videojuegos.service';
+import { TiendaVideojuegosService } from '../../../services/tienda-videojuegos.service';
+
 
 
 @Component({

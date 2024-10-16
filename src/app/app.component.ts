@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet} from '@angular/router';
-import { ListaVideojuegosComponent } from './components/lista-videojuegos/lista-videojuegos.component';
-import { AgregarVideojuegoComponent } from './components/agregar-videojuego/agregar-videojuego.component';
+import { AgregarVideojuegoComponent } from './components/main/agregar-videojuego/agregar-videojuego.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ListaVideojuegosComponent } from './components/main/lista-videojuegos/lista-videojuegos.component';
 
 @Component({
   selector: 'app-root',
