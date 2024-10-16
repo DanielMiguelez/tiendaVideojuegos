@@ -15,9 +15,9 @@ ul{
 }
 
 li{
-    background: linear-gradient(135deg, #de950d, #1a218c);
+    background: url(../../../../media/SoR1.jpg);
     box-shadow: 0 2px 12px rgba(255, 0, 0, 0.5);
-    color: #000000; /* Texto negro */
+    color: #fff200; /* Texto negro */
     padding: 10px;
     font-weight: bold;
     margin: 5px ;
@@ -39,13 +39,13 @@ button{
     text-align: center; /* Centra el texto */
     text-decoration: none; /* Sin subrayado */
     color: #ffffff; /* Color del texto */
-    background-color: #007bff; /* Color de fondo del botón */
+    background-color: #961dce; /* Color de fondo del botón */
     border: none; /* Sin borde */
     border-radius: 5px; /* Bordes redondeados */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
     transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    width: 25%;
+    width: 35%;
 }
 button:hover {
     background-color: #0056b3; /* Color de fondo al pasar el mouse */

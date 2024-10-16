@@ -27,12 +27,21 @@ export class TiendaVideojuegosService {
 
 // METODOS 
 
-getItemById(id: number): any {
+actualizarVideojuego(id:number, videojuegoActualizado:{ name: string, type: string, year: string, platform: string, descripcion: string }){
+  const game = this.videojuegos.findIndex(videojuego => videojuego.id === id);
 
-  const videojuego = this.videojuegos.find(videojuego => videojuego.id === id);
-  
-  return videojuego;  // Puede ser undefined si no se encuentra
+  if (game !== -1) {
+    this.videojuegos[game] = { ...this.videojuegos[game], ...videojuegoActualizado };
+    this.saveToLocalStorage();  // Guarda los cambios en localStorage
+  }
 }
+
+  getItemById(id: number): any {
+
+    const videojuego = this.videojuegos.find(videojuego => videojuego.id === id);
+    
+    return videojuego;  // Puede ser undefined si no se encuentra
+  }
 
 
   getVideojuegos(){
@@ -54,6 +63,7 @@ getItemById(id: number): any {
     this.saveToLocalStorage();  
   }
 
+  // TRABAJAR AQUI CON LOCAL STORAGE
 
 
   private saveToLocalStorage(){
