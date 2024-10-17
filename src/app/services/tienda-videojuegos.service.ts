@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class TiendaVideojuegosService {
 
   private storageKey = 'videojuegos';
+  router: any;
 
   constructor() {
       if(this.isLocalStorageAvailable()){
@@ -23,18 +24,7 @@ export class TiendaVideojuegosService {
 
   ];
 
-  // crear array de imagenes
-
 // METODOS 
-
-actualizarVideojuego(id:number, videojuegoActualizado:{ name: string, type: string, year: string, platform: string, descripcion: string }){
-  const game = this.videojuegos.findIndex(videojuego => videojuego.id === id);
-
-  if (game !== -1) {
-    this.videojuegos[game] = { ...this.videojuegos[game], ...videojuegoActualizado };
-    this.saveToLocalStorage();  // Guarda los cambios en localStorage
-  }
-}
 
   getItemById(id: number): any {
 
@@ -63,6 +53,23 @@ actualizarVideojuego(id:number, videojuegoActualizado:{ name: string, type: stri
     this.saveToLocalStorage();  
   }
 
+
+  actualizarVideojuego(id:number, name: string, type: string, year: string, platform: string, descripcion: string){
+    const index = this.videojuegos.findIndex(videojuego => videojuego.id === id);
+    if (index !== -1) {
+      this.videojuegos[index] = {
+        ...this.videojuegos[index], 
+        name,
+        type,
+        year,
+        platform,
+        descripcion
+      };
+      this.saveToLocalStorage();  // Guarda los cambios en localStorage
+    }
+  }
+
+
   // TRABAJAR AQUI CON LOCAL STORAGE
 
 
@@ -76,6 +83,11 @@ actualizarVideojuego(id:number, videojuegoActualizado:{ name: string, type: stri
     } catch (e) {
       return false;
     }
+  }
+
+  // navegar entre paginas  
+  navigateTo(route:string){
+    this.router.navigate([route])
   }
 
 }

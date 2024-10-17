@@ -1,1 +1,21 @@
-<p>editar-videojuego works!</p>
+<div class="padre-details">
+
+    <div class="videojuego-edit-container">
+    
+        <div class="header">
+            <h2>Editar Videojuego</h2>
+        </div>
+    
+        <div class="videojuego-editar-tarjeta">
+            <input value="{{videojuego.name}}">
+            <input value="{{videojuego.type}}">
+            <input value="{{videojuego.year}}">
+            <input value="{{videojuego.platform}}">
+            <input value="{{videojuego.descripcion}}">
+
+        <button (click) ="editarVideojuego(videojuego.id,videojuego.name,videojuego.type, videojuego.year, videojuego.platform, videojuego.descripcion)">Add videogame</button>
+    
+            
+        </div>
+    
+    </div>

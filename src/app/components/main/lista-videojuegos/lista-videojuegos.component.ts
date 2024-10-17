@@ -35,6 +35,12 @@ export class ListaVideojuegosComponent implements OnInit{
     this.router.navigate(['/videojuego', id]);
   }
 
+  editarVideojuego(id:number, name:string, type:string, year:string, platform:string, descripcion:string){
+    this.TiendaVideojuegosService.actualizarVideojuego(id, name, type, year, platform, descripcion);
+    this.router.navigate(['/editar_videojuego', id]);
+  }
+
+
 }
 
 

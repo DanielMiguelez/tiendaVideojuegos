@@ -20,4 +20,6 @@ export class DetallesVideojuegoComponent {
   const id = +this.route.snapshot.paramMap.get('id')!; 
   this.videojuego = this.tiendaVideojuegosService.getItemById(id);
   }
+
+  
 }
