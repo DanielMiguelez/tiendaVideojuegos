@@ -29,6 +29,7 @@ export class ListaVideojuegosComponent implements OnInit{
 
   deleteVideojuego(index:number){
     this.TiendaVideojuegosService.deleteVideojuego(index);
+    alert("Juego eliminado correctamente !");
   }
 
   verVideojuego(id:number){
@@ -36,7 +37,7 @@ export class ListaVideojuegosComponent implements OnInit{
   }
 
   editarVideojuego(id:number, name:string, type:string, year:string, platform:string, descripcion:string){
-    this.TiendaVideojuegosService.actualizarVideojuego(id, name, type, year, platform, descripcion);
+    this.TiendaVideojuegosService.editarVideojuego(id, name, type, year, platform, descripcion);
     this.router.navigate(['/editar_videojuego', id]);
   }
 

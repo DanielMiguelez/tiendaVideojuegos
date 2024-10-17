@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TiendaVideojuegosService } from '../../../services/tienda-videojuegos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agregar-videojuego',
@@ -17,12 +18,15 @@ export class AgregarVideojuegoComponent {
   tiposPlataforma: string[] = ['PC','PlayStation 5','Xbox Series X','Nintendo Switch'
   ,'PC VR','PlayStation 4','Xbox One','Nintendo 3DS','iOS','Android','Xbox 360',
   'PlayStation Vita','Game Boy','Sega Genesis','Atari',];
+  
 
-  constructor(private TiendaVideojuegosService : TiendaVideojuegosService){}
+  constructor(private TiendaVideojuegosService : TiendaVideojuegosService,
+   private router: Router){}
 
   
   addVideojuego(name: string, type: string, year: string, platform: string, descripcion:string ) {
 
     this.TiendaVideojuegosService.addVideojuego(name,type, year, platform, descripcion);
+    this.router.navigate(['list']);
   }
 }

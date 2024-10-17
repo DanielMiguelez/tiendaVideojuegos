@@ -1,21 +1,38 @@
 <div class="padre-details">
 
-    <div class="videojuego-edit-container">
-    
-        <div class="header">
-            <h2>Editar Videojuego</h2>
-        </div>
-    
-        <div class="videojuego-editar-tarjeta">
-            <input value="{{videojuego.name}}">
-            <input value="{{videojuego.type}}">
-            <input value="{{videojuego.year}}">
-            <input value="{{videojuego.platform}}">
-            <input value="{{videojuego.descripcion}}">
+<div class="videojuego-edit-container">
 
-        <button (click) ="editarVideojuego(videojuego.id,videojuego.name,videojuego.type, videojuego.year, videojuego.platform, videojuego.descripcion)">Add videogame</button>
-    
-            
-        </div>
-    
+    <div class="header">
+        <h2>Detalles Videojuego</h2>
     </div>
+
+    <div class="videojuego-edit-tarjeta">
+        <label>
+            Nombre:
+            <input [(ngModel)]="videojuego.name" placeholder="Nombre">
+        </label>
+        <label>
+            Tipo:
+            <input [(ngModel)]="videojuego.type" placeholder="Tipo">
+        </label>
+        <label>
+            Año:
+            <input [(ngModel)]="videojuego.year" placeholder="Año">
+        </label>
+        <label>
+            Plataforma:
+            <input [(ngModel)]="videojuego.platform" placeholder="Plataforma">
+        </label>
+        <label>
+            Descripción:
+            <input [(ngModel)]="videojuego.descripcion" placeholder="Descripción">
+        </label>
+    
+        <button id="edit-button" (click)="editarVideojuego(videojuego.id, videojuego.name, videojuego.type, videojuego.year, videojuego.platform, videojuego.descripcion)">
+            Editar
+        </button>
+    </div>
+
+
+
+</div>

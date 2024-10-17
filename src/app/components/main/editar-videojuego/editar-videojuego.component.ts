@@ -1,18 +1,21 @@
 import { Component } from '@angular/core';
 import { TiendaVideojuegosService } from '../../../services/tienda-videojuegos.service';
 import { ActivatedRoute, Router} from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-editar-videojuego',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+    FormsModule
+  ],
   templateUrl: './editar-videojuego.component.html',
   styleUrl: './editar-videojuego.component.css'
 })
 export class EditarVideojuegoComponent {
-navigateTo(arg0: string) {
-throw new Error('Method not implemented.');
-}
+
 
   videojuego : any ={};
 
@@ -28,28 +31,18 @@ throw new Error('Method not implemented.');
 
     if(videojuego){
       this.videojuego = {...videojuego};
-    }
+    }else {
+      console.error('Videojuego no encontrado');
+      this.router.navigate(['/list']); 
   }
+}
 
-  // guardaria aqui los cambios al haber actualizado un juego
+  editarVideojuego(id:number, name: string, type: string, year: string, platform: string, descripcion:string ) {
 
-  guardarCambios(){
-    if(this.videojuego.id){
-      this.tiendaVideojuegosService.actualizarVideojuego(
-        this.videojuego.id,
-        this.videojuego.name,
-        this.videojuego.type,
-        this.videojuego.year,
-        this.videojuego.platform,
-        this.videojuego.descripcion
-      );
-      this.router.navigate(['/list'])
-    }
+    this.tiendaVideojuegosService.editarVideojuego(id, name,type, year, platform, descripcion);
+
+    alert("Editado con Éxito");
+
+    this.router.navigate(['list']); // Redirigir a la lista de videojuegos
   }
-  editarVideojuego(id:number, name:string, type:string, year:string, platform:string, descripcion:string){
-    this.tiendaVideojuegosService.actualizarVideojuego(id, name, type, year, platform, descripcion);
-    this.router.navigate(['/editar_videojuego', id]);
-  }
-  
- 
 }

@@ -54,7 +54,7 @@ export class TiendaVideojuegosService {
   }
 
 
-  actualizarVideojuego(id:number, name: string, type: string, year: string, platform: string, descripcion: string){
+  editarVideojuego(id:number, name: string, type: string, year: string, platform: string, descripcion: string){
     const index = this.videojuegos.findIndex(videojuego => videojuego.id === id);
     if (index !== -1) {
       this.videojuegos[index] = {
