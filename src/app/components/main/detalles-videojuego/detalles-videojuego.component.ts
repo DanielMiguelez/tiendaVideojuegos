@@ -17,8 +17,8 @@ export class DetallesVideojuegoComponent {
   constructor(private route: ActivatedRoute, private tiendaVideojuegosService : TiendaVideojuegosService) {}
 
   ngOnInit(): void {
-  const id = +this.route.snapshot.paramMap.get('id')!; 
-  this.videojuego = this.tiendaVideojuegosService.getItemById(id);
+    const id = +this.route.snapshot.paramMap.get('id')!; 
+    this.videojuego = this.tiendaVideojuegosService.getItemById(id);
   }
 
   

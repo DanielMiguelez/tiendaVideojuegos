@@ -27,9 +27,8 @@ export class TiendaVideojuegosService {
 // METODOS 
 
   getItemById(id: number): any {
-
     const videojuego = this.videojuegos.find(videojuego => videojuego.id === id);
-    
+  
     return videojuego;  // Puede ser undefined si no se encuentra
   }
 
@@ -56,6 +55,7 @@ export class TiendaVideojuegosService {
 
   editarVideojuego(id:number, name: string, type: string, year: string, platform: string, descripcion: string){
     const index = this.videojuegos.findIndex(videojuego => videojuego.id === id);
+
     if (index !== -1) {
       this.videojuegos[index] = {
         ...this.videojuegos[index], 
