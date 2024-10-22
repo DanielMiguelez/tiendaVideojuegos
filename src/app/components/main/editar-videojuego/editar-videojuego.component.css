@@ -13,20 +13,46 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Sombra más suave y profesional */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
 }
-.videojuego-editar-tarjeta{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
 .videojuego-edit-tarjeta{
     display: flex;
     flex-direction: column;
 }
 
+.el1{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-around;
+}
+.el2{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.el3{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.el4{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.el5{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
 .videojuego-edit-tarjeta input{
     width: 250px;
-    height: 30px;
+    height: 20px;
     border-radius: 10px;
     background-color: gray;
     margin: 10px;
@@ -35,6 +61,13 @@
 .videojuego-edit-tarjeta button{
     width: 250px;
     height: 30px;
+    margin: 10px;
     background-color: rgb(24, 67, 174);
+    align-self: center;
+    border: 2px solid rgb(72, 255, 0);
+}
+.videojuego-edit-tarjeta button:hover{
+    border: 2px solid gold;
+    background-color: rgb(84, 24, 174);
 }
 

@@ -42,7 +42,27 @@ a:hover{
     transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8); /* Sombra más fuerte al hacer hover */
 }
+.videojuego-detalles-tarjeta{
+    display: flex;
+    flex-direction: column;
+}
 
+.videojuego-detalles-tarjeta p{
+    color: green;
+}
+
+.videojuego-detalles-tarjeta a{
+    margin: 20px;
+    background-color: #0a1172;
+    color: green;
+    padding: 10px;
+    border: 2px solid gold;
+}
+
+.videojuego-detalles-tarjeta a:hover{
+    
+    border: 2px solid rgb(255, 30, 0);
+}
 
 .padre-details{
     height:100vh;

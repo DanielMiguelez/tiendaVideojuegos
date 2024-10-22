@@ -53,7 +53,8 @@ button{
     max-width: 350px; /* Ancho máximo del botón */
     padding: 10px; /* Espaciado interno */
     margin-top: 15px; /* Margen superior */
-    border: none; /* Sin borde */
+    
+    border: 2px solid rgb(0, 255, 21);
     border-radius: 5px; /* Bordes redondeados */
     background-color: #0043d4; /* Color de fondo del botón */
     color: #ffe600; /* Color del texto */
@@ -62,8 +63,9 @@ button{
 }
 
 button:hover{
-    background-color: yellow;
+    background-color: rgb(70, 133, 111);
     color: blue;
+    border: 2px solid gold;
 }
 
 h3{

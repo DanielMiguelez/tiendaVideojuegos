@@ -3,34 +3,38 @@
 <div class="videojuego-edit-container">
 
     <div class="header">
-        <h2>Detalles Videojuego</h2>
+        <h2> Editar Videojuego</h2>
     </div>
 
     <div class="videojuego-edit-tarjeta">
-        <label>
-            Nombre:
+      
+        <div class="el1">
+            <label>Nombre:</label>
             <input [(ngModel)]="videojuego.name" placeholder="Nombre">
-        </label>
-        <label>
-            Tipo:
+            
+        </div>
+        <div class="el2">
+            <label>Tipo Juego:</label>
             <input [(ngModel)]="videojuego.type" placeholder="Tipo">
-        </label>
-        <label>
-            Año:
+        </div>
+        <div class="el3">
+            <label>Año Salida:</label>
             <input [(ngModel)]="videojuego.year" placeholder="Año">
-        </label>
-        <label>
-            Plataforma:
+            
+        </div>
+        <div class="el4">
+            <label>Plataforma:</label>
             <input [(ngModel)]="videojuego.platform" placeholder="Plataforma">
-        </label>
-        <label>
-            Descripción:
+        </div>
+        <div class="el5">
+            <label>Opiniones :</label>
             <input [(ngModel)]="videojuego.descripcion" placeholder="Descripción">
-        </label>
-    
-        <button id="edit-button" (click)="editarVideojuego(videojuego.id, videojuego.name, videojuego.type, videojuego.year, videojuego.platform, videojuego.descripcion)">
-            Editar
-        </button>
+        </div>
+        
+            <button id="edit-button" (click)="editarVideojuego(videojuego.id, videojuego.name, videojuego.type, videojuego.year, videojuego.platform, videojuego.descripcion)">
+                Editar
+            </button>
+        
     </div>
 
 
