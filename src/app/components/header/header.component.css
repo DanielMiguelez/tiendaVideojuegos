@@ -26,6 +26,7 @@
     border: 2px solid rgb(77, 255, 0);
     font-weight: 900;
     border: 2px solid gold;
+    color: white;
 }
 .enlaces button:hover{
     background-color: rgb(106, 32, 159);

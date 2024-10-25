@@ -1,3 +1,10 @@
+
+/* Aplica la fuente a toda la aplicación */
+body {
+    font-family: 'PixelFont', cursive; /* Aplica la fuente a todo el body */
+}
+
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente limpia y moderna */
     background-color: #f4f4f4; /* Color de fondo suave */

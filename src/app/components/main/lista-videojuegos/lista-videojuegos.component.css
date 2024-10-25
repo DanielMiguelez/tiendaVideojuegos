@@ -5,6 +5,7 @@
     text-align: center;
     text-align: center;
     height: 80vh;
+    
 }
 
 
@@ -15,7 +16,7 @@ ul{
 }
 
 li{
-    background: url(../../../../media/SoR1.jpg);
+    backdrop-filter: blur(5px);
     box-shadow: 0 2px 12px rgba(255, 0, 0, 0.5);
     color: #fff200; /* Texto negro */
     padding: 10px;
@@ -54,6 +55,11 @@ button:hover {
     border: 2px solid gold;
 }
 
+.imageTest img {
+    width: 10%; /* La imagen ocupará todo el ancho del div */
+    height: auto; /* Mantiene la proporción */
+}
+ 
 .modal {
     position: fixed; /* Hace que el modal se mantenga fijo en la pantalla */
     top: 0;
@@ -65,6 +71,8 @@ button:hover {
     justify-content: center;
     align-items: center;
     z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+    background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco semi-transparente */
+    backdrop-filter: blur(10px); 
 }
 
 .modalContenido {
@@ -86,3 +94,6 @@ button:hover {
 .modalContenido button {
     margin: 5px; /* Espaciado entre botones */
 }
+
+/* IMAGE DECORATION */
+
