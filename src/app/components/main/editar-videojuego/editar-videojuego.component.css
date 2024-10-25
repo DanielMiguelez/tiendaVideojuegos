@@ -1,8 +1,9 @@
 .videojuego-edit-container{
     margin: 10vh auto; /* Centrado vertical y horizontal */
-    background: linear-gradient(135deg, #3b3b3b, #0a1172);
+    backdrop-filter: blur(5px);
     padding: 20px;
     display: flex;
+    color: yellow;
     flex-direction: column;
     height: 40vh;
     align-items: center;
@@ -62,9 +63,10 @@
     width: 250px;
     height: 30px;
     margin: 10px;
-    background-color: rgb(24, 67, 174);
+    background-color: rgb(64, 104, 204);
     align-self: center;
-    border: 2px solid rgb(72, 255, 0);
+    border: 2px solid rgb(25, 0, 255);
+    border-radius: 10px;
 }
 .videojuego-edit-tarjeta button:hover{
     border: 2px solid gold;

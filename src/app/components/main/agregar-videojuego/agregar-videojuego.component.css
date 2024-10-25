@@ -1,5 +1,5 @@
 .addVideojuego{
-    background: linear-gradient(135deg, #000000, #0a1172);
+    backdrop-filter: blur(5px);
     padding: 10px; /* Espaciado interno */
     display: flex;
     gap: 25px;
