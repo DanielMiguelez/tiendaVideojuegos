@@ -16,6 +16,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class EditarVideojuegoComponent {
 
+  showModal = false;
+
+  selectedIndex:number | null = null;
 
   videojuego : any ={};
 
@@ -38,11 +41,17 @@ export class EditarVideojuegoComponent {
 }
 
   editarVideojuego(id:number, name: string, type: string, year: string, platform: string, descripcion:string ) {
-
     this.tiendaVideojuegosService.editarVideojuego(id, name,type, year, platform, descripcion);
-
-    alert("Editado con Éxito");
-
+    this.closeModal();
     this.router.navigate(['list']); // Redirigir a la lista de videojuegos
+  }
+
+  openModal(){
+    this.showModal = true;
+  }
+
+  closeModal(){
+    this.showModal = false;
+    this.selectedIndex = null;
   }
 }

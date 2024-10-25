@@ -53,3 +53,36 @@ button:hover {
     color: green;
     border: 2px solid gold;
 }
+
+.modal {
+    position: fixed; /* Hace que el modal se mantenga fijo en la pantalla */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+    display: flex; /* Usar flex para centrar el contenido */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+}
+
+.modalContenido {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px; /* Ancho del modal */
+    text-align: center; /* Centra el texto dentro del modal */
+}
+
+.modalContenido h3 {
+    margin: 0 0 10px; /* Espaciado del título */
+}
+
+.modalContenido p {
+    margin: 10px 0; /* Espaciado del párrafo */
+}
+
+.modalContenido button {
+    margin: 5px; /* Espaciado entre botones */
+}

@@ -13,6 +13,9 @@ import { Router } from '@angular/router';
 
 export class AgregarVideojuegoComponent {
 
+  showModal: boolean = false;
+
+
   tiposVideojuego: string[] = ['Rol', 'Terror', 'FPS', 'TPS', 'Survival Horror', 'Aventura gráfica', 'RPG' ];
 
   tiposPlataforma: string[] = ['PC','PlayStation 5','Xbox Series X','Nintendo Switch'
@@ -24,9 +27,21 @@ export class AgregarVideojuegoComponent {
    private router: Router){}
 
   
+    // METODOS
+  
   addVideojuego(name: string, type: string, year: string, platform: string, descripcion:string ) {
 
     this.TiendaVideojuegosService.addVideojuego(name,type, year, platform, descripcion);
+    
     this.router.navigate(['list']);
+  }
+
+  openModal() {
+    this.showModal = true;
+  }
+
+  // Función para cerrar el modal
+  closeModal() {
+    this.showModal = false;
   }
 }

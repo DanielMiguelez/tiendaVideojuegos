@@ -30,13 +30,22 @@
             <label>Opiniones :</label>
             <input [(ngModel)]="videojuego.descripcion" placeholder="Descripción">
         </div>
-        
-            <button id="edit-button" (click)="editarVideojuego(videojuego.id, videojuego.name, videojuego.type, videojuego.year, videojuego.platform, videojuego.descripcion)">
-                Editar
-            </button>
+
+        <button (click)="openModal()">
+            Guardar cambios
+        </button>
+    
         
     </div>
 
-
-
+    <div class="modal" *ngIf="showModal">
+        <div class="modalContenido">
+            <h3>Vas a Editar...</h3>
+            <p>Guardar Cambios ?</p>
+            <button (click)="editarVideojuego(videojuego.id, 
+            videojuego.name, videojuego.type, videojuego.year, 
+            videojuego.platform, videojuego.platform)">Sí, guardar.</button>
+            <button (click)="closeModal()">Mejor no.</button>
+        </div>
+    </div>
 </div>

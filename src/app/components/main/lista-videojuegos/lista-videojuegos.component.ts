@@ -21,15 +21,23 @@ export class ListaVideojuegosComponent implements OnInit{
 
   constructor (private TiendaVideojuegosService : TiendaVideojuegosService, private router: Router){  }
 
+  showModal: boolean = false;
+
+  selectedIndex: number | null = null;
+
+
   // metodo para añadir un videojuego
 
   ngOnInit(): void {
     this.videojuegos = this.TiendaVideojuegosService.getVideojuegos();
   }
 
-  deleteVideojuego(index:number){
-    this.TiendaVideojuegosService.deleteVideojuego(index);
-    alert("Juego eliminado correctamente !");
+  deleteVideojuego(){
+    if(this.selectedIndex !== null){
+      this.TiendaVideojuegosService.deleteVideojuego(this.selectedIndex);
+      this.videojuegos = this.TiendaVideojuegosService.getVideojuegos();
+      this.closeModal();
+    }
   }
 
   verVideojuego(id:number){
@@ -39,6 +47,17 @@ export class ListaVideojuegosComponent implements OnInit{
   editarVideojuego(id:number, name:string, type:string, year:string, platform:string, descripcion:string){
     this.TiendaVideojuegosService.editarVideojuego(id, name, type, year, platform, descripcion);
     this.router.navigate(['/editar_videojuego', id]);
+    this.closeModal();
+  }
+
+  openModal(index:number){
+    this.selectedIndex = index;
+    this.showModal = true;
+  }
+
+  closeModal () : void{
+    this.showModal = false;
+    this.selectedIndex = null;
   }
 
 
