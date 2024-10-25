@@ -5,9 +5,24 @@
     text-align: center;
     text-align: center;
     height: 80vh;
-    
 }
 
+.images{
+    display: flex;
+    gap: 60vh;
+}
+
+.imageTest{
+    background-image: url(../../../../media/Rage1.png);
+    height: 50px;
+    width: 50px;
+}
+
+.imageTest2{
+    background-image: url(../../../../media/Rage4.png);
+    height: 30px;
+    width: 30px;
+}
 
 ul{
     display: flex;
@@ -21,7 +36,7 @@ li{
     color: #fff200; /* Texto negro */
     padding: 10px;
     font-weight: bold;
-    margin: 5px ;
+    margin: 5px;
     width: 25%;
     border-radius: 5px;
     text-transform: uppercase;
@@ -55,10 +70,6 @@ button:hover {
     border: 2px solid gold;
 }
 
-.imageTest img {
-    width: 10%; /* La imagen ocupará todo el ancho del div */
-    height: auto; /* Mantiene la proporción */
-}
  
 .modal {
     position: fixed; /* Hace que el modal se mantenga fijo en la pantalla */

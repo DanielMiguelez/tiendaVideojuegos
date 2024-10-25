@@ -1,5 +1,10 @@
-<div class="imageTest">
-    <img src="../../../../media/Rage1.png" srcset="">
+<div class="images">
+   <div class="imageTest"> 
+        <img src="../../../../media/Rage1.png" alt="">
+    </div>
+    <div class="imageTest"> 
+        <img src="../../../../media/Rage4.png" alt="">
+    </div>
 </div>
 
 <div class="lista">
@@ -20,6 +25,8 @@
             <button id="detail-button" (click)="editarVideojuego(videojuego.id, videojuego.name, videojuego.type, videojuego.year, videojuego.platform, videojuego.platform)">Editar</button>
         </li>
     </ul>
+
+   
 
     <div class="modal" *ngIf="showModal">
 

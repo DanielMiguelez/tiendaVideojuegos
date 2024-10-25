@@ -72,3 +72,19 @@ h3{
     color: #f7ff06;
     text-transform: uppercase;
 }
+
+.images{
+    display: flex;
+    gap: 60vh;
+}
+.imageTest{
+    background-image: url(../../../../media/Rage1.png);
+    height: 50px;
+    width: 50px;
+}
+
+.imageTest2{
+    background-image: url(../../../../media/Rage4.png);
+    height: 30px;
+    width: 30px;
+}
