@@ -44,6 +44,7 @@ export class TiendaVideojuegosService {
     const videojuego = {id:newId, name, type, year, platform, descripcion};
 
     this.videojuegos.push(videojuego);
+    
     this.saveToLocalStorage();  
   }
 

@@ -19,44 +19,21 @@
     flex-direction: column;
 }
 
-.el1{
-    width: 100%;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    justify-content: space-around;
-}
-.el2{
-    width: 100%;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-.el3{
-    width: 100%;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-.el4{
-    width: 100%;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-.el5{
+.el1 .el2 .el3 .el4 .el5{
     width: 100%;
     display: flex;
     gap: 20px;
     align-items: center;
 }
 
+
 .videojuego-edit-tarjeta input{
     width: 250px;
     height: 20px;
     border-radius: 10px;
     background-color: gray;
-    margin: 10px;
+    margin: 5px;
+    padding: 10px;
 }
 
 .videojuego-edit-tarjeta button{
@@ -106,4 +83,35 @@
 
 .modalContenido button {
     margin: 5px; /* Espaciado entre botones */
+}
+
+.divAncla{
+    display: flex;
+    align-self: end;
+}
+
+a{
+    background-color: red;
+    padding: 5px;
+    width: 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(255, 234, 0, 0.6); 
+   
+}
+
+.inputs{
+    padding: 10px;
+    margin-top: 5vh;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.header h2{
+    color: yellow;
+    font-size: 40px;
 }

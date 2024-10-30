@@ -46,6 +46,10 @@ export class EditarVideojuegoComponent {
     this.router.navigate(['list']); // Redirigir a la lista de videojuegos
   }
 
+  backToList(){
+    this.router.navigate(['list']);
+  }
+
   openModal(){
     this.showModal = true;
   }
