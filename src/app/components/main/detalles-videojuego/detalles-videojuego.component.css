@@ -1,10 +1,10 @@
 h2 {
     text-transform: uppercase;
-    color: rgb(245, 245, 78);
+    color: rgb(255, 221, 0);
 }
 
 p{
-    color: white;
+    color: rgb(255, 221, 0);
 }
 
 
@@ -24,7 +24,7 @@ a:hover{
 
 .videojuego-detail-container {
     margin: 10vh auto; /* Centrado vertical y horizontal */
-    background: linear-gradient(135deg, #3b3b3b, #0a1172);
+    backdrop-filter: blur(5px);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@ a:hover{
     width: 50vh;
     border: 2px solid rgba(195, 195, 111, 0.8); /* Bordes ligeramente transparentes */
     border-radius: 15px; /* Esquinas redondeadas */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Sombra más suave y profesional */
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6); /* Sombra más suave y profesional */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
 }
 
@@ -45,23 +45,26 @@ a:hover{
 .videojuego-detalles-tarjeta{
     display: flex;
     flex-direction: column;
+    color: white;
 }
 
 .videojuego-detalles-tarjeta p{
-    color: rgb(255, 255, 255);
+    color: rgb(253, 190, 0);
 }
 
 .videojuego-detalles-tarjeta a{
     margin: 20px;
-    background-color: #0a1172;
-    color: green;
+    background-color: #060606;
+    color: rgb(255, 0, 0);
     padding: 10px;
     border: 2px solid gold;
+    transition: background-color 1s ease, transform 1s ease; 
 }
 
 .videojuego-detalles-tarjeta a:hover{
     
     border: 2px solid rgb(255, 30, 0);
+    background-color: gold;
 }
 
 .padre-details{

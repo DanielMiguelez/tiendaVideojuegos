@@ -55,7 +55,7 @@ button{
     text-align: center; /* Centra el texto */
     text-decoration: none; /* Sin subrayado */
     color: #ffffff; /* Color del texto */
-    background-color: #961dce; /* Color de fondo del botón */
+    background-color: #8b00cb; /* Color de fondo del botón */
     border: none; /* Sin borde */
     border-radius: 5px; /* Bordes redondeados */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
@@ -68,6 +68,7 @@ button:hover {
     background-color: #0a1172;
     color: green;
     border: 2px solid gold;
+    
 }
 
  
