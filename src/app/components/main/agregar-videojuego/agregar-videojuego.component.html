@@ -23,7 +23,7 @@
                 <option  *ngFor="let plataforma of tiposPlataforma" value="{{plataforma}}">{{plataforma}}</option>
             </select>
 
-            <textarea #videojuegoDesc type="text" placeholder="Descripción"></textarea>    
+            <input #videojuegoDesc type="text" placeholder="Descripción">
 
     <button (click) ="addVideojuego(videojuegoName.value, videojuegoType.value, 
         videojuegoYear.value, videojuegoPlatform.value, videojuegoDesc.value)">

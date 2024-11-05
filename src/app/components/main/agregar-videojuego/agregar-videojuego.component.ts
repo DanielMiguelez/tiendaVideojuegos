@@ -23,8 +23,7 @@ export class AgregarVideojuegoComponent {
   'PlayStation Vita','Game Boy','Sega Genesis','Atari',];
   
 
-  constructor(private TiendaVideojuegosService : TiendaVideojuegosService,
-   private router: Router){}
+  constructor(private TiendaVideojuegosService : TiendaVideojuegosService, private router: Router){}
 
   
     // METODOS

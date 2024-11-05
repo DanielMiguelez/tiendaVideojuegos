@@ -1,3 +1,5 @@
+/* ESTILOS DE LA TARJETA DE EDITAR VIDEOJUEGO */
+
 .videojuego-edit-container{
     margin: 10vh auto; /* Centrado vertical y horizontal */
     backdrop-filter: blur(5px);
@@ -5,19 +7,25 @@
     display: flex;
     color: yellow;
     flex-direction: column;
-    height: 40vh;
+    height: auto;
     align-items: center;
     text-align: center;
     width: 50vh;
-    border: 2px solid rgba(195, 195, 111, 0.8); /* Bordes ligeramente transparentes */
-    border-radius: 15px; /* Esquinas redondeadas */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Sombra más suave y profesional */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
+    border: 2px solid rgba(195, 195, 111, 0.8); 
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
+
+/*PARA ALINEAR LOS ELEMENTOS DENTRO */
+
 .videojuego-edit-tarjeta{
     display: flex;
     flex-direction: column;
+    width:100%
 }
+
+/* AQUI CONTROLO QUE ESTEN UNO AL LADO DEL OTRO */
 
 .el1 .el2 .el3 .el4 .el5{
     width: 100%;
@@ -25,29 +33,33 @@
     gap: 20px;
     align-items: center;
 }
-
+/* CONTROLO LOS ESTILOS DE LOS INPUTS */
 
 .videojuego-edit-tarjeta input{
     width: 250px;
     height: 20px;
     border-radius: 10px;
-    background-color: gray;
+    color: yellow;
+    background-color: rgb(77, 12, 217);
     margin: 5px;
     padding: 10px;
+    border: 2px solid yellow;
 }
 
 .videojuego-edit-tarjeta button{
     width: 250px;
-    height: 30px;
-    margin: 10px;
-    background-color: rgb(64, 104, 204);
+    height: 50px;
+    background-color: rgb(0, 0, 0);
     align-self: center;
-    border: 2px solid rgb(25, 0, 255);
+    border: 2px solid rgb(255, 225, 0);
     border-radius: 10px;
+    color: rgb(255, 0, 0);
+    transition: background-color 1s ease, transform 1s ease; 
 }
 .videojuego-edit-tarjeta button:hover{
     border: 2px solid gold;
-    background-color: rgb(84, 24, 174);
+    background-color: rgb(255, 0, 0);
+    color: black;
 }
 
 .modal {
@@ -85,11 +97,6 @@
     margin: 5px; /* Espaciado entre botones */
 }
 
-.divAncla{
-    display: flex;
-    align-self: end;
-}
-
 a{
     background-color: red;
     padding: 5px;
@@ -100,18 +107,37 @@ a{
     box-shadow: 0 4px 8px rgba(255, 234, 0, 0.6); 
    
 }
-
-.inputs{
-    padding: 10px;
-    margin-top: 5vh;
+a:hover{
+    background-color: rgb(216, 44, 44);
+    cursor: pointer;
+    border: 2px solid black;
 }
+
+.inputs {
+    display: flex;
+    flex-direction: column; /* Coloca los inputs en columna */
+    gap: 15px; /* Espacio entre los campos */
+    margin-top: 5vh;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+}
+
+.inputs label {
+    text-align: left; /* Alinea las etiquetas a la izquierda */
+}
+
 
 .header{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding: 10px;
 }
 .header h2{
     color: yellow;
     font-size: 40px;
+}
+
+.header h4 {
+    margin: 0; /* Elimina margen para alineación perfecta */
+    color: yellow; /* Color del título */
+    font-size: 24px; /* Ajusta el tamaño del título según sea necesario */
 }

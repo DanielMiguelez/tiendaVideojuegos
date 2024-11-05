@@ -58,4 +58,6 @@ export class EditarVideojuegoComponent {
     this.showModal = false;
     this.selectedIndex = null;
   }
+
+ 
 }

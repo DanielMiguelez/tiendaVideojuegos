@@ -1,48 +1,48 @@
 <div class="padre-details">
 
-    <div class="header">
-        <h2> Editar Videojuego</h2>
-    </div>
 
-<div class="videojuego-edit-container">
+    <div class="videojuego-edit-container">
 
-    <div class="videojuego-edit-tarjeta">
-
-        <div class="divAncla">
-            <a (click)="backToList()">X</a>
+        <div class="videojuego-edit-tarjeta">
+    
+            <div class="header"> <!-- Contenedor para título y enlace -->
+                <h4>EDITA TU VIDEOJUEGO</h4>
+                <div class="divAncla">
+                    <a (click)="backToList()">X</a>
+                </div>
+            </div>
+    
+        <div class="inputs">
+            <div class="el1">
+                <label>Nombre VG :</label>
+                <input [(ngModel)]="videojuego.name" placeholder="Nombre">
+                
+            </div>
+            <div class="el2">
+                <label>Tipo Juego:</label>
+                <input [(ngModel)]="videojuego.type" placeholder="Tipo">
+            </div>
+            <div class="el3">
+                <label>Año Salida:</label>
+                <input [(ngModel)]="videojuego.year" placeholder="Año">
+                
+            </div>
+            <div class="el4">
+                <label>Plataforma:</label>
+                <input [(ngModel)]="videojuego.platform" placeholder="Plataforma">
+            </div>
+            <div class="el5">
+                <label>Opiniones :</label>
+                <input [(ngModel)]="videojuego.descripcion" placeholder="Descripción">
+            </div>
+    
+            <button (click)="openModal()">
+                Guardar cambios
+            </button>
         </div>
-
-    <div class="inputs">
-        <div class="el1">
-            <label>Nombre VG :</label>
-            <input [(ngModel)]="videojuego.name" placeholder="Nombre">
             
         </div>
-        <div class="el2">
-            <label>Tipo Juego:</label>
-            <input [(ngModel)]="videojuego.type" placeholder="Tipo">
-        </div>
-        <div class="el3">
-            <label>Año Salida:</label>
-            <input [(ngModel)]="videojuego.year" placeholder="Año">
-            
-        </div>
-        <div class="el4">
-            <label>Plataforma:</label>
-            <input [(ngModel)]="videojuego.platform" placeholder="Plataforma">
-        </div>
-        <div class="el5">
-            <label>Opiniones :</label>
-            <input [(ngModel)]="videojuego.descripcion" placeholder="Descripción">
-        </div>
-
-        <button (click)="openModal()">
-            Guardar cambios
-        </button>
-    </div>
-        
-    </div>
-
+    
     <div class="modal" *ngIf="showModal">
         <div class="modalContenido">
             <h3>Vas a Editar...</h3>

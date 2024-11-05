@@ -87,6 +87,7 @@ export class TiendaVideojuegosService {
   }
 
   // navegar entre paginas  
+  
   navigateTo(route:string){
     this.router.navigate([route])
   }
