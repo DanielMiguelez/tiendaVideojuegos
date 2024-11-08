@@ -4,7 +4,8 @@
     margin: 10px;
     text-align: center;
     text-align: center;
-    height: 80vh;
+    max-height: 677px;  /* Ajusta esta altura según necesites */
+    overflow-y: auto;
 }
 
 .images{
@@ -32,8 +33,8 @@ ul{
 
 li{
     backdrop-filter: blur(5px);
-    box-shadow: 0 2px 12px rgba(255, 0, 0, 0.5);
-    color: #fff200; /* Texto negro */
+    box-shadow: 0 2px 18px rgba(255, 0, 251, 0.5);
+    color: #ffee00; /* Texto negro */
     padding: 10px;
     font-weight: bold;
     margin: 5px;
@@ -43,7 +44,7 @@ li{
     display: flex;
     flex-direction: column;
     gap: 15px;
-     border: 5px solid black;
+    border: 0px;
     align-items: center;
 }
 
@@ -55,19 +56,18 @@ button{
     text-align: center; /* Centra el texto */
     text-decoration: none; /* Sin subrayado */
     color: #ffffff; /* Color del texto */
-    background-color: #8b00cb; /* Color de fondo del botón */
+    background-color: #0000006e; /* Color de fondo del botón */
     border: none; /* Sin borde */
     border-radius: 5px; /* Bordes redondeados */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
     transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
     width: 35%;
-    border: 2px solid rgb(4, 255, 0);
+    border:0px;
 }
 button:hover {
-    background-color: #0a1172;
-    color: green;
-    border: 2px solid gold;
+    background-color: #9d00ff;
+    color: rgb(0, 0, 0);
     
 }
 
@@ -88,7 +88,7 @@ button:hover {
 }
 
 .modalContenido {
-    background-color: white;
+    background-color: rgb(1, 65, 169);
     padding: 20px;
     border-radius: 8px;
     width: 300px; /* Ancho del modal */

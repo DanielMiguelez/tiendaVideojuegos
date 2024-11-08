@@ -1,15 +1,22 @@
-footer {
-    padding: 10px; /* Espaciado dentro del footer */
-    text-align: center; /* Centra el contenido del footer */
-    bottom: 0;
-    position: fixed;
-    background: url(../../../media/SoR1.jpg);
-    height: 10vh;
-    background-position: center;
-}
-
 p{
     color: rgb(255, 0, 0);
     font-size: 40px;
     font-weight: 900;
 }
+
+footer {
+    background: linear-gradient(to bottom, #8800ff85, #767373);
+    background-repeat: repeat;
+    color: #f0f0f0; /* Texto claro */
+    padding: 40px 0;
+    background-repeat: no-repeat;
+    height: 7vh;
+    position: fixed;
+    text-align: center;
+    border-top: 5px solid #1c2e5a; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); 
+    font-family: 'Roboto', sans-serif;
+    width: 100%; 
+    bottom: 0; 
+}
+    

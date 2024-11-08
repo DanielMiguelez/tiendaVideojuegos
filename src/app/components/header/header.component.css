@@ -1,11 +1,15 @@
+header{
+    width: 100%;
+    background: url(../../../media/SoR.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
 .enlaces{
     width: 100vh; /* Ancho máximo del contenedor */
     margin: 20px auto; /* Centrar el contenedor en la página */
     padding: 10px; /* Espaciado interno */
-    background: url(../../../media/SoR.jpg);
-    background-position: center;
-    background-color: rgb(34, 83, 120);
-    background-size: cover;
+  
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
     text-align: center; /* Centrar el contenido dentro del contenedor */
@@ -17,18 +21,15 @@
 .enlaces button{
     all: unset;
     text-transform: uppercase;
-    background-color: rgb(31, 64, 147);
+    background-color: rgba(0, 0, 0, 0.433);
     padding: 15px;
     border-radius: 10px;
     box-shadow: 5px solid black;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     margin: 10px;
-    border: 2px solid rgb(77, 255, 0);
     font-weight: 900;
-    border: 2px solid gold;
     color: white;
 }
 .enlaces button:hover{
-    background-color: rgb(106, 32, 159);
-    border: 2px solid rgb(4, 255, 0);
+    background-color: rgba(144, 0, 247);
 }

@@ -11,7 +11,7 @@
     box-shadow: 0 12px 20px rgba(255, 0, 0, 0.5); 
     max-width: 400px; 
     margin: 40px auto; 
-    border: 2px solid gold;
+    border: 0px;
 
 }
 
@@ -20,17 +20,18 @@ input{
     max-width: 350px; /* Ancho máximo del input */
     padding: 10px; /* Espaciado interno */
     margin: 10px 0; /* Margen arriba y abajo */
+    text-transform: uppercase;
     border: none; /* Sin borde */
     border-radius: 5px; /* Bordes redondeados */
-    color: #ffffff; /* Color de texto blanco */
+    color: #ff0000; /* Color de texto blanco */
     font-size: 16px; /* Tamaño de fuente */
     transition: background-color 0.3s; /* Transición suave para el color de fondo */
-    border: 2px solid gold;
-    background-color: rgb(84, 24, 174);
+    border: 0px;
+    background-color: rgba(0, 0, 0, 0.434);
 }
 
 input:hover{
-    background-color: #4b3c3c;
+    background-color: #8400ff9a;
 }
 
 
@@ -40,15 +41,16 @@ select {
     padding: 10px; /* Espaciado interior */
     width: 370px; /* Ancho del select */
     height: auto; /* La altura se ajusta automáticamente */
-    background-color: #ffea00; /* Color de fondo */
-    border: 1px solid #00796b; /* Borde del select */
+    background-color: #00000074; /* Color de fondo */
     border-radius: 5px; /* Bordes redondeados */
     transition: background-color 1s ease, transform 1s ease; 
-    color: #000000; 
+    color: #ff0000; 
+    border: 0px;
+    text-transform: uppercase;
 }
 
 select:hover{
-    background-color: #ece8009a;
+    background-color: #8400ff9a;
 }
 
 button{
@@ -57,8 +59,8 @@ button{
     padding: 10px; 
     color: red;
     margin-top: 15px; 
-    border: 2px solid gold;
-    background-color: rgb(0, 0, 0);
+    border: 0px;
+    background-color: rgba(140, 0, 255, 0.478);
     border-radius: 5px; 
     font-size: 16px; 
     transition: background-color 1s ease, transform 1s ease; 
@@ -66,9 +68,8 @@ button{
 }
 
 button:hover{
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(102, 0, 245);
     color: rgb(0, 0, 0);
-    border: 2px solid gold;
 }
 
 h3{
