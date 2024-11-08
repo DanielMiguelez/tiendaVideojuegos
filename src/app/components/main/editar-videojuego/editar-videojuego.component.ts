@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class EditarVideojuegoComponent {
 
+  tiposVideojuego: string[] = ['Rol', 'Terror', 'FPS', 'TPS', 'Survival Horror', 'Aventura gráfica', 'RPG' ];
+
   showModal = false;
 
   selectedIndex:number | null = null;
