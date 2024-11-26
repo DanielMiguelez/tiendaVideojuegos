@@ -11,25 +11,31 @@
 
     <h3>Add Videogame</h3>
 
-            <input #videojuegoName placeholder="Name">
+    <form [formGroup]="form" (submit)="send()"> 
 
-            <select #videojuegoType>
+            <input #videojuegoName placeholder="Name" formControlName="name">
+
+            <select #videojuegoType formControlName="type">
                 <option  *ngFor="let tipo of tiposVideojuego" value="{{tipo}}">{{tipo}}</option>
             </select>
 
-            <input #videojuegoYear placeholder="Year">
+            <input #videojuegoYear placeholder="Year" formControlName="year">
             
-            <select #videojuegoPlatform>
+            <select #videojuegoPlatform formControlName="platform">
                 <option  *ngFor="let plataforma of tiposPlataforma" value="{{plataforma}}">{{plataforma}}</option>
             </select>
 
-            <input #videojuegoDesc type="text" placeholder="Descripción">
+            <input #videojuegoDesc type="text" placeholder="Descripción" formControlName="descripcion">
 
-    <button (click) ="addVideojuego(videojuegoName.value, videojuegoType.value, 
-        videojuegoYear.value, videojuegoPlatform.value, videojuegoDesc.value)">
-        Add videogame
-    </button>
-    
+            <button [disabled]="form.invalid" (click) ="addVideojuego(videojuegoName.value, videojuegoType.value, 
+            videojuegoYear.value, videojuegoPlatform.value, videojuegoDesc.value)">
+            Add videogame
+        </button>
+    </form>
+
+    <div>
+        Valido: {{form.valid | json}}
+    </div>
 
 
 </div>
