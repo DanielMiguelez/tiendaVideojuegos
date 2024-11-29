@@ -33,9 +33,16 @@
         </button>
     </form>
 
+    <div *ngIf="showModal" class="modal">
+        <div class="modal-content">
+          <h2>¡Videojuego añadido!</h2>
+          <p>El videojuego ha sido agregado exitosamente.</p>
+          <button (click)="closeModal()">Aceptar</button>
+        </div>
+      </div>
+
     <div>
         Valido: {{form.valid | json}}
     </div>
-
 
 </div>

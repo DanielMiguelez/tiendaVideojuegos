@@ -16,7 +16,8 @@ export class AgregarVideojuegoComponent {
 
   title = 'formulario';
 
-  showModal: boolean = false;
+  showModal = false;
+  
 
   public form!: FormGroup;
 
@@ -60,14 +61,14 @@ export class AgregarVideojuegoComponent {
   
 
 
-  
     // METODOS
   
   addVideojuego(name: string, type: string, year: string, platform: string, descripcion:string ) {
 
     this.TiendaVideojuegosService.addVideojuego(name,type, year, platform, descripcion);
+
+    this.openModal();
     
-    this.router.navigate(['list']);
   }
 
   openModal() {
@@ -77,5 +78,6 @@ export class AgregarVideojuegoComponent {
   // Función para cerrar el modal
   closeModal() {
     this.showModal = false;
+    this.router.navigate(['list']);
   }
 }
