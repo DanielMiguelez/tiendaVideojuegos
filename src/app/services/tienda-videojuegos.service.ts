@@ -38,13 +38,9 @@ export class TiendaVideojuegosService {
   }
 
   addVideojuego( name: string, type: string, year: string, platform: string, descripcion:string){
-    
     const newId = this.videojuegos.length > 0 ? Math.max(...this.videojuegos.map(videojuego => videojuego.id)) + 1 : 1;
-
     const videojuego = {id:newId, name, type, year, platform, descripcion};
-
-    this.videojuegos.push(videojuego);
-    
+    this.videojuegos.push(videojuego); 
     this.saveToLocalStorage();  
   }
 
@@ -72,7 +68,6 @@ export class TiendaVideojuegosService {
 
 
   // TRABAJAR AQUI CON LOCAL STORAGE
-
 
   private saveToLocalStorage(){
     localStorage.setItem(this.storageKey, JSON.stringify(this.videojuegos));

@@ -20,6 +20,12 @@
             </select>
 
             <input #videojuegoYear placeholder="Year" formControlName="year">
+            <div *ngIf="form.get('year')?.invalid && form.get('year')?.touched">
+              <small *ngIf="form.get('year')?.errors?.['required']">El año es obligatorio.</small>
+              <small *ngIf="form.get('year')?.errors?.['pattern']">El año debe ser un número válido.</small>
+              <small *ngIf="form.get('year')?.errors?.['min']">El año debe ser mayor o igual a 1900.</small>
+              <small *ngIf="form.get('year')?.errors?.['max']">El año debe ser menor o igual a 2100.</small>
+            </div>
             
             <select #videojuegoPlatform formControlName="platform">
                 <option  *ngFor="let plataforma of tiposPlataforma" value="{{plataforma}}">{{plataforma}}</option>
@@ -27,13 +33,16 @@
 
             <input #videojuegoDesc type="text" placeholder="Descripción" formControlName="descripcion">
 
-            <button [disabled]="form.invalid" (click) ="addVideojuego(videojuegoName.value, videojuegoType.value, 
+            <button [disabled]="form.invalid" 
+            [ngClass]="form.valid ? 'valid-button' : 'default-button'"
+            (click) ="addVideojuego(videojuegoName.value, videojuegoType.value, 
             videojuegoYear.value, videojuegoPlatform.value, videojuegoDesc.value)">
             Add videogame
         </button>
     </form>
 
-    <div *ngIf="showModal" class="modal">
+    <div *ngIf="showModal" class="modal"
+        [ngClass]="form.valid ? 'valid-button' : 'default-button'">
         <div class="modal-content">
           <h2>¡Videojuego añadido!</h2>
           <p>El videojuego ha sido agregado exitosamente.</p>
@@ -41,8 +50,8 @@
         </div>
       </div>
 
-    <div>
-        Valido: {{form.valid | json}}
+    <div class="hidden">
+       {{form.valid | json}}
     </div>
 
 </div>

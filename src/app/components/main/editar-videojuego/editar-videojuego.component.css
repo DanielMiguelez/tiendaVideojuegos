@@ -75,12 +75,12 @@
     justify-content: center;
     align-items: center;
     z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
-    background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco semi-transparente */
-    backdrop-filter: blur(10px); 
+  
+  
 }
 
 .modalContenido {
-    background-color: white;
+    background-color: rgb(224, 160, 121);
     padding: 20px;
     border-radius: 8px;
     width: 300px; /* Ancho del modal */
@@ -97,6 +97,16 @@
 
 .modalContenido button {
     margin: 5px; /* Espaciado entre botones */
+    padding: 10px;
+    background-color: rgb(52, 52, 181);
+    color: rgb(229, 254, 0);
+    border: 2px solid yellow;
+    border-radius: 5px;
+}
+
+.modalContenido button:hover{
+    background-color: rgb(165, 164, 79);
+    color: blue;
 }
 
 a{

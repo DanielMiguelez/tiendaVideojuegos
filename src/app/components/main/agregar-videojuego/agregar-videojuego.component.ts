@@ -34,10 +34,11 @@ export class AgregarVideojuegoComponent {
         Validators.minLength(3)
       ]],
       year: ['', [
-        Validators.required,
-        Validators.minLength(4),
-        Validators.maxLength(4)
-      ]],
+        Validators.required, 
+        Validators.pattern(/^\d+$/),
+        Validators.min(1900), 
+        Validators.max(2100)]],
+
       platform: ['', [
         Validators.required,
       ]],
@@ -59,23 +60,19 @@ export class AgregarVideojuegoComponent {
   ,'PC VR','PlayStation 4','Xbox One','Nintendo 3DS','iOS','Android','Xbox 360',
   'PlayStation Vita','Game Boy','Sega Genesis','Atari',];
   
-
-
-    // METODOS
-  
   addVideojuego(name: string, type: string, year: string, platform: string, descripcion:string ) {
-
-    this.TiendaVideojuegosService.addVideojuego(name,type, year, platform, descripcion);
-
-    this.openModal();
-    
+    if (this.form.valid) {
+      this.TiendaVideojuegosService.addVideojuego(name,type, year, platform, descripcion);
+      this.openModal();
+    } else {
+      console.error('Formulario inválido');
+    }
   }
 
   openModal() {
     this.showModal = true;
   }
 
-  // Función para cerrar el modal
   closeModal() {
     this.showModal = false;
     this.router.navigate(['list']);
