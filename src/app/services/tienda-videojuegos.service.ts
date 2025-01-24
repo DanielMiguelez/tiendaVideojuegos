@@ -46,7 +46,7 @@ export class TiendaVideojuegosService {
 
   deleteVideojuego(index: number){
     this.videojuegos.splice(index, 1);
-    this.saveToLocalStorage();  
+    this.saveToLocalStorage();
   }
 
 
