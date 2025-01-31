@@ -9,7 +9,7 @@
 
 <div class="lista">
 
-    <p *ngIf="videojuegos.length === 0"> Hemos quebrado, no vendemos nada</p>
+    <p *ngIf="videojuegos && videojuegos.length === 0"> Hemos quebrado, no vendemos nada</p>
     <ul>
         <li *ngFor="let videojuego of videojuegos, let i = index">
             {{videojuego.name}} <br> 

@@ -3,9 +3,6 @@ import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { VideogameServiceService } from '../../../services/videogameService/videogame-service.service';
 
-
-
-
 @Component({
   selector: 'app-lista-videojuegos',
   standalone: true,

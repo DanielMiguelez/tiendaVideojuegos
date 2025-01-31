@@ -9,7 +9,7 @@ export class VideogameServiceService {
 
   /*private baseUrl = 'http://192.168.0.111:80/api/daniel/videojuegos.php?table=videojuegos'; // Base URL*/
 
-  private baseUrl = 'https://c74f4156107e.ngrok.app/api/daniel/videojuegos.php?table='; // Base URL
+  private baseUrl = 'https://c74f4156107e.ngrok.app/api/daniel/videojuegos.php?table=videojuegos'; // Base URL
   
     constructor(private http: HttpClient) { }
   
