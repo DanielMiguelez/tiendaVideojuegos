@@ -3,9 +3,10 @@ import {AgregarVideojuegoComponent} from './components/main/agregar-videojuego/a
 import { DetallesVideojuegoComponent } from './components/main/detalles-videojuego/detalles-videojuego.component';
 import { ListaVideojuegosComponent } from './components/main/lista-videojuegos/lista-videojuegos.component';
 import { EditarVideojuegoComponent } from './components/main/editar-videojuego/editar-videojuego.component';
-
+import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
 
 export const routes: Routes = [
+    {path :'inicioSesion', component: InicioSesionComponent},
     {path:'addVideogame', component: AgregarVideojuegoComponent},
     {path:'list', component: ListaVideojuegosComponent},
     {path:'videojuego/:id', component: DetallesVideojuegoComponent},

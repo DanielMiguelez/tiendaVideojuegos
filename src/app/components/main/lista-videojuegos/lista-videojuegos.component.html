@@ -22,23 +22,18 @@
             </button>
 
             <button id="detail-button" (click)="verVideojuego(videojuego.id)">Detalles</button>
-            <button id="detail-button" (click)="editarVideojuego(videojuego.id, videojuego.name, videojuego.type, videojuego.year, videojuego.platform, videojuego.platform)">Editar</button>
+            <!--<button id="detail-button" (click)="editarVideojuego(videojuego.id, videojuego.name, videojuego.type, videojuego.year, videojuego.platform, videojuego.platform)">Editar</button>-->
         </li>
     </ul>
-
    
 
     <div class="modal" *ngIf="showModal">
 
-    <div class="modalContenido">
-        <h3>Confirmar Eliminacion</h3>
-        <p>Seguro que lo quieres eliminar? No hay vuelta atrás.</p>
-        <button (click)="deleteVideojuego()">
-            Si, eliminar.
-        </button>
-        
-        <button (click)="closeModal()">Mejor no.</button>
-    </div>
+        <div *ngIf="showModal" class="modal">
+            <p>¿Estás seguro de que deseas eliminar este videojuego?</p>
+            <button (click)="deleteVideojuegoPro()">Sí</button>
+            <button (click)="closeModal()">No</button>
+          </div>
 </div>
 </div>
 

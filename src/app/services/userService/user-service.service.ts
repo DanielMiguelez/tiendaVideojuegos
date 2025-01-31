@@ -35,5 +35,7 @@ export class UserServiceService {
       const url = nombre ? `${this.baseUrl}usuarios?nombre=${nombre}` : `${this.baseUrl}usuarios`;
       return this.http.get(url);
     }
+
+    
 }
 
