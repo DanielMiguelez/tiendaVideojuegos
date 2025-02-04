@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 
 export class UserServiceService {
-  private baseUrl = 'http://192.168.0.111:80/api/daniel/videojuegos.php?table='; // Base URL
+  private baseUrl = 'https://c74f4156107e.ngrok.app/api/daniel/videojuegos.php?table=usuarios'; // Base URL
 
   constructor(private http: HttpClient) { }
 

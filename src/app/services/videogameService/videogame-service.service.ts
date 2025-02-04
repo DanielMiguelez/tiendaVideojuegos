@@ -31,6 +31,4 @@ export class VideogameServiceService {
       const url = nombre ? `${this.baseUrl}&nombre=${nombre}` : `${this.baseUrl}`;
       return this.http.get(url);
     }
-
-    
 }

@@ -1,21 +1,22 @@
 <div class="images">
-   <div class="imageTest"> 
+    <div class="imageTest">
         <img src="../../../../media/Rage1.png" alt="">
     </div>
-    <div class="imageTest"> 
+    <div class="imageTest">
         <img src="../../../../media/Rage4.png" alt="">
     </div>
 </div>
 
 <div class="lista">
 
-    <p *ngIf="videojuegos && videojuegos.length === 0"> Hemos quebrado, no vendemos nada</p>
+    <p *ngIf="videojuegos && videojuegos.length === 0">Hemos quebrado, no vendemos nada</p>
+
     <ul>
-        <li *ngFor="let videojuego of videojuegos, let i = index">
+        <li *ngFor="let videojuego of videojuegos; let i = index">
             {{videojuego.name}} <br> 
-            Tipo:  {{videojuego.type}} <br> 
+            Tipo: {{videojuego.type}} <br> 
             Año: {{videojuego.year}} <br> 
-            Plataforma: {{videojuego.platform}} 
+            Plataforma: {{videojuego.platform}}
 
             <button (click)="openModal(i)">
                 <i class="fas fa-trash"></i> 
@@ -25,15 +26,16 @@
             <!--<button id="detail-button" (click)="editarVideojuego(videojuego.id, videojuego.name, videojuego.type, videojuego.year, videojuego.platform, videojuego.platform)">Editar</button>-->
         </li>
     </ul>
-   
 
+    <!-- Modal de confirmación para eliminar -->
     <div class="modal" *ngIf="showModal">
 
-        <div *ngIf="showModal" class="modal">
+        <div class="modal-content">
             <p>¿Estás seguro de que deseas eliminar este videojuego?</p>
             <button (click)="deleteVideojuegoPro()">Sí</button>
             <button (click)="closeModal()">No</button>
-          </div>
-</div>
-</div>
+        </div>
+        
+    </div>
 
+</div>

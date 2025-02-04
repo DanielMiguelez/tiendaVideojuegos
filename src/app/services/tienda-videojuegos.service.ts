@@ -21,6 +21,8 @@ export class TiendaVideojuegosService {
     { id: 1, name: 'Uncharted', type: 'Aventura', year: "2007", platform: 'PS3' , descripcion:''},
     { id:2, name: 'Resident Evil', type: 'Terror', year: "1996", platform: 'PS1', descripcion:''},
     { id:3, name: 'Counter-Strike', type: 'FPS', year: "1999", platform: 'PC' , descripcion:''},
+    { id:4, name: 'Resident Evil', type: 'Terror', year: "1996", platform: 'PS1', descripcion:''},
+    { id:5, name: 'Counter-Strike', type: 'FPS', year: "1999", platform: 'PC' , descripcion:''},
 
   ];
 
@@ -31,7 +33,6 @@ export class TiendaVideojuegosService {
   
     return videojuego;  // Puede ser undefined si no se encuentra
   }
-
 
   getVideojuegos(){
     return this.videojuegos;

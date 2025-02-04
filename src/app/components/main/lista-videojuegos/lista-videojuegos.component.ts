@@ -14,13 +14,14 @@ import { VideogameServiceService } from '../../../services/videogameService/vide
 export class ListaVideojuegosComponent implements OnInit{
 
   tiposVideojuego: string[] = ['Rol', 'Terror', 'FPS', 'TPS', 'Survival Horror', 'Aventura gráfica', 'RPG' ];
-
   videojuegos: {id:number, name:string, type:string, year: string, platform: string} []= [];
-
-  constructor (private videogameService:VideogameServiceService, private router: Router){  }
+  
+  constructor (
+    private videogameService:VideogameServiceService,
+    private router: Router
+  ){}
 
   showModal: boolean = false;
-
   selectedIndex: number | null = null; 
 
 
@@ -35,6 +36,7 @@ export class ListaVideojuegosComponent implements OnInit{
     this.videogameService.getVideojuego().subscribe(
       (response: any) => {
         this.videojuegos = response.data;
+        console.log(this.videojuegos);
       },
       (error) => {
         console.error('Error al cargar los videojuegos:', error);
@@ -44,11 +46,11 @@ export class ListaVideojuegosComponent implements OnInit{
 
   deleteVideojuegoPro(): void {
     if (this.selectedIndex !== null) {
-      const videojuegoId = this.videojuegos[this.selectedIndex].id;
+      const videojuegoId = this.selectedIndex; // Cambiado para usar el índice directamente
       this.videogameService.deleteVideojuego(videojuegoId).subscribe(
         () => {
-          this.videojuegos.splice(this.selectedIndex as number, 1); // Eliminar el videojuego de la lista
-          this.closeModal(); // Cerrar el modal
+          // Eliminar el videojuego de la lista local
+          this.closeModal();
         },
         (error: any) => {
           console.error('Error al eliminar el videojuego:', error);
