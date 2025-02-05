@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Videojuego } from '../../models/videojuego';
 
 @Injectable({
   providedIn: 'root'
@@ -13,22 +14,27 @@ export class VideogameServiceService {
   
     constructor(private http: HttpClient) { }
   
-    createVideojuego(videojuego: any): Observable<any> {
+    createVideojuego(videojuego: Videojuego): Observable<Videojuego> {
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-      return this.http.post(this.baseUrl, videojuego, { headers });
+      return this.http.post<Videojuego>(this.baseUrl, videojuego, { headers });
     }
-
-    deleteVideojuego(id:number):Observable<void> {
-      return this.http.delete<void>(`${this.baseUrl}&id=${id}`); 
+  
+    deleteVideojuego(id: number): Observable<void> {
+      const url = `${this.baseUrl}&id=${id}`;
+      return this.http.delete<void>(url); 
     }
-
-    updateVideojuego(id: number, data: Partial<any>): Observable<any> {
+  
+    updateVideojuego(id: number, data: Partial<Videojuego>): Observable<Videojuego> {
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-      return this.http.put(`${this.baseUrl}&id=${id}`, data, { headers });
+      return this.http.put<Videojuego>(`${this.baseUrl}&id=${id}`, data, { headers });
     }
 
-    getVideojuego(nombre?: string): Observable<any> {
+    getVideojuegos(): Observable<Videojuego[]> {
+      return this.http.get<Videojuego[]>(this.baseUrl); // Devuelve todos los videojuegos
+    }
+
+    getVideojuego(nombre?: string): Observable<Videojuego[]> {
       const url = nombre ? `${this.baseUrl}&nombre=${nombre}` : `${this.baseUrl}`;
-      return this.http.get(url);
+      return this.http.get<Videojuego[]>(url);
     }
 }

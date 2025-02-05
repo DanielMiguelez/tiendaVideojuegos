@@ -2,6 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { VideogameServiceService } from '../../../services/videogameService/videogame-service.service';
+import { Videojuego } from '../../../models/videojuego';
+import { catchError, tap } from 'rxjs/operators';
+import { of } from 'rxjs';
+
 
 @Component({
   selector: 'app-lista-videojuegos',
@@ -14,8 +18,9 @@ import { VideogameServiceService } from '../../../services/videogameService/vide
 export class ListaVideojuegosComponent implements OnInit{
 
   tiposVideojuego: string[] = ['Rol', 'Terror', 'FPS', 'TPS', 'Survival Horror', 'Aventura gráfica', 'RPG' ];
-  videojuegos: {id:number, name:string, type:string, year: string, platform: string} []= [];
-  
+  //videojuegos: {id:number, name:string, type:string, year: string, platform: string} []= [];
+  videojuegos: Videojuego[] = [];
+
   constructor (
     private videogameService:VideogameServiceService,
     private router: Router
@@ -32,32 +37,38 @@ export class ListaVideojuegosComponent implements OnInit{
   }
 
   // Método para cargar los videojuegos desde la API
-  cargarVideojuegos(): void {
-    this.videogameService.getVideojuego().subscribe(
-      (response: any) => {
-        this.videojuegos = response.data;
-        console.log(this.videojuegos);
+  
+cargarVideojuegos(): void {
+  this.videogameService.getVideojuegos().pipe(  // Cambié getVideojuego() por getVideojuegos()
+    tap((response: Videojuego[]) => {           // Se espera un arreglo de videojuegos
+      this.videojuegos = response;
+      console.log(this.videojuegos);
+    }),
+    catchError((error) => {
+      console.error('Error al cargar los videojuegos:', error);
+      return of([]);  // Devolver un array vacío si hay un error
+    })
+  ).subscribe();
+}
+
+deleteVideojuegoPro(): void {
+  if (this.selectedIndex !== null) {
+    const videojuegoId = this.videojuegos[this.selectedIndex].id; // Obtener el id del videojuego seleccionado
+    this.videogameService.deleteVideojuego(videojuegoId).subscribe(
+      () => {
+        // Si la eliminación es exitosa, eliminar el videojuego de la lista local
+        if (this.selectedIndex !== null) {
+          this.videojuegos.splice(this.selectedIndex, 1); // Eliminar el videojuego de la lista
+          console.log("videojuego eliminado correctamente");
+          this.closeModal();
+        }
       },
-      (error) => {
-        console.error('Error al cargar los videojuegos:', error);
+      (error: any) => {
+        console.error('Error al eliminar el videojuego:', error);
       }
     );
   }
-
-  deleteVideojuegoPro(): void {
-    if (this.selectedIndex !== null) {
-      const videojuegoId = this.selectedIndex; // Cambiado para usar el índice directamente
-      this.videogameService.deleteVideojuego(videojuegoId).subscribe(
-        () => {
-          // Eliminar el videojuego de la lista local
-          this.closeModal();
-        },
-        (error: any) => {
-          console.error('Error al eliminar el videojuego:', error);
-        }
-      );
-    }
-  }
+}
   
   verVideojuego(id:number){
     this.router.navigate(['/videojuego', id]);

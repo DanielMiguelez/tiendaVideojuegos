@@ -12,18 +12,18 @@
     <p *ngIf="videojuegos && videojuegos.length === 0">Hemos quebrado, no vendemos nada</p>
 
     <ul>
+        <!-- Recorremos el array 'videojuegos' -->
         <li *ngFor="let videojuego of videojuegos; let i = index">
-            {{videojuego.name}} <br> 
-            Tipo: {{videojuego.type}} <br> 
-            Año: {{videojuego.year}} <br> 
-            Plataforma: {{videojuego.platform}}
+            {{videojuego.nombre}} <br>  <!-- Cambiado 'name' a 'nombre' -->
+            Tipo: {{videojuego.tipo_nombre}} <br>  <!-- Cambiado 'type' a 'tipo_nombre' -->
+            Año: {{videojuego.anyo}} <br>  <!-- Cambiado 'year' a 'anyo' -->
 
             <button (click)="openModal(i)">
                 <i class="fas fa-trash"></i> 
             </button>
 
             <button id="detail-button" (click)="verVideojuego(videojuego.id)">Detalles</button>
-            <!--<button id="detail-button" (click)="editarVideojuego(videojuego.id, videojuego.name, videojuego.type, videojuego.year, videojuego.platform, videojuego.platform)">Editar</button>-->
+            <!--<button id="detail-button" (click)="editarVideojuego(videojuego.id, videojuego.nombre, videojuego.tipo_nombre, videojuego.anyo, videojuego.plataforma)">Editar</button>-->
         </li>
     </ul>
 

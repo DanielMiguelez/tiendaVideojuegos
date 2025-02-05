@@ -11,7 +11,7 @@
 
     <h3>Add Videogame</h3>
 
-    <form [formGroup]="form" (submit)="send()"> 
+    <form [formGroup]="form" (ngSubmit)="addVideojuego()"> 
 
             <input #videojuegoName placeholder="Name" formControlName="name">
 
@@ -33,12 +33,9 @@
 
             <input #videojuegoDesc type="text" placeholder="Descripción" formControlName="descripcion">
 
-            <button [disabled]="form.invalid" 
-            [ngClass]="form.valid ? 'valid-button' : 'default-button'"
-            (click) ="addVideojuego(videojuegoName.value, videojuegoType.value, 
-            videojuegoYear.value, videojuegoPlatform.value, videojuegoDesc.value)">
-            Add videogame
-        </button>
+            <button type="submit" [disabled]="form.invalid" [ngClass]="form.valid ? 'valid-button' : 'default-button'">
+                Add videogame
+            </button>
     </form>
 
     <div *ngIf="showModal" class="modal"
