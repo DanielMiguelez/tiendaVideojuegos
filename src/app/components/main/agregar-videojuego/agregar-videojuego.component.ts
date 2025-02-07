@@ -26,53 +26,68 @@ export class AgregarVideojuegoComponent {
 
    ngOnInit(): void {
     this.form = this.formBuilder.group({
-      name: ['', [
-        Validators.required,
-        Validators.minLength(3)
-      ]],
-      type: ['', [
-        Validators.required,
-        Validators.minLength(3)
-      ]],
-      year: ['', [
-        Validators.required, 
-        Validators.pattern(/^\d+$/),
-        Validators.min(1900), 
-        Validators.max(2100)
-      ]],
-      platform: ['', [
-        Validators.required,
-      ]],
-      descripcion: ['', [
-        Validators.required,
-        Validators.minLength(3)
-      ]],
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      type: ['', [Validators.required]],
+      year: ['', [Validators.required, Validators.pattern(/^\d+$/), Validators.min(1900), Validators.max(2100)]],
+      platform: ['', [Validators.required]],
+      descripcion: ['', [Validators.required, Validators.minLength(3)]],
     });
+  
+    // Obtener tipos de videojuegos
+    this.videogameService.getTipos().subscribe(
+      (tipos) => {
+        this.tiposVideojuego = tipos;
+      },
+      (error) => {
+        console.error('Error al obtener tipos de videojuegos:', error);
+      }
+    );
+  
+    // Obtener plataformas
+    this.videogameService.getPlataformas().subscribe(
+      (plataformas) => {
+        this.plataformas = plataformas;
+        console.log('Plataformas recibidas:', plataformas);  // Log para verificar
+      },
+      (error) => {
+        console.error('Error al obtener plataformas:', error);
+      }
+    );
   }
 
   addVideojuego() {
     if (this.form.valid) {
-      const videojuego: Videojuego = {
-        id: 0, // Puedes asignar un valor por defecto o dejar que lo genere la base de datos
-        nombre: this.form.value.name,
-        tipo: this.form.value.type,
-        anyo: this.form.value.year,
-        plataforma: this.form.value.platform,
-        descripcion: this.form.value.descripcion,
-        tipo_id: 1, // O el valor correspondiente para el tipo
-        tipo_nombre: this.form.value.type  // O asignar el nombre del tipo
-      };
+      // Buscar el tipo seleccionado por su ID
+      const tipoSeleccionado = this.tiposVideojuego.find(tipo => tipo.id === parseInt(this.form.value.type));
+      // Buscar la plataforma seleccionada por su ID
+      const plataformaSeleccionada = this.plataformas.find(plataforma => plataforma.id === parseInt(this.form.value.platform));
   
-      // Llamar al servicio para enviar el videojuego
-      this.videogameService.createVideojuego(videojuego).subscribe(
-        (response) => {
-          console.log('Videojuego añadido correctamente:', response);
-          this.openModal(); // Abrimos el modal de éxito
-        },
-        (error) => {
-          console.error('Error al añadir el videojuego:', error);
-        }
-      );
+      if (tipoSeleccionado && plataformaSeleccionada) {
+        const videojuego: Videojuego = {
+          id: 0, // La base de datos se encargará de asignar un ID
+          nombre: this.form.value.name,
+          tipo_id: tipoSeleccionado.id, // Usamos el ID del tipo
+          anyo: this.form.value.year,
+          plataforma_id: plataformaSeleccionada.id, // Usamos el ID de la plataforma
+          descripcion: this.form.value.descripcion,
+          tipo_nombre: ''
+        };
+  
+        console.log(videojuego);  // Asegúrate de ver el objeto en la consola
+  
+        // Llamamos al servicio para crear el videojuego
+        this.videogameService.createVideojuego(videojuego).subscribe(
+          (response) => {
+            console.log('Respuesta recibida:', response);  // Agrega este log para ver la respuesta
+            this.openModal(); // Abrimos el modal de éxito
+          },
+          (error) => {
+            console.error('Error al añadir el videojuego:', error);
+          }
+        );
+      } else {
+        console.error('Tipo o plataforma no encontrados.');
+      }
     } else {
       console.error('Formulario inválido');
     }
@@ -83,10 +98,14 @@ export class AgregarVideojuegoComponent {
     console.log(this.form.value);
   }
 
+  tiposVideojuego: { id: number; nombre: string }[] = [];
 
-  /*tiposVideojuego: string[] = ['Rol', 'Terror', 'FPS', 'TPS', 'Survival Horror', 'Aventura gráfica', 'RPG' ];
+  plataformas: { id: number; nombreplataforma: string }[] = [];
 
-  tiposPlataforma: string[] = ['PC','PlayStation 5','Xbox Series X','Nintendo Switch'
+
+  /*tiposVideojuego: string[] = ['Rol', 'Terror', 'FPS', 'TPS', 'Survival Horror', 'Aventura gráfica', 'RPG' ];*/
+
+  /*tiposPlataforma: string[] = ['PC','PlayStation 5','Xbox Series X','Nintendo Switch'
   ,'PC VR','PlayStation 4','Xbox One','Nintendo 3DS','iOS','Android','Xbox 360',
   'PlayStation Vita','Game Boy','Sega Genesis','Atari',];*/
   

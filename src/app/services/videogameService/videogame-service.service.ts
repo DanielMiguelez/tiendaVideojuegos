@@ -37,4 +37,14 @@ export class VideogameServiceService {
       const url = nombre ? `${this.baseUrl}&nombre=${nombre}` : `${this.baseUrl}`;
       return this.http.get<Videojuego[]>(url);
     }
+
+    getTipos(): Observable<{ id: number; nombre: string }[]> {
+      const url = 'https://c74f4156107e.ngrok.app/api/daniel/videojuegos.php?table=tipo'; // URL para tipos
+      return this.http.get<{ id: number; nombre: string }[]>(url);
+    }
+    
+    getPlataformas(): Observable<{ id: number; nombreplataforma: string }[]> {
+      const url = 'https://c74f4156107e.ngrok.app/api/daniel/videojuegos.php?table=plataforma'; // URL para plataformas
+      return this.http.get<{ id: number; nombreplataforma: string }[]>(url);
+    }
 }
