@@ -1,98 +1,91 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { VideogameServiceService } from '../../../services/videogameService/videogame-service.service';
 import { Videojuego } from '../../../models/videojuego';
 import { catchError, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
-
+import { FormsModule } from '@angular/forms';  // Importa FormsModule
 
 @Component({
   selector: 'app-lista-videojuegos',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],  // Asegúrate de incluir FormsModule aquí
   templateUrl: './lista-videojuegos.component.html',
-  styleUrl: './lista-videojuegos.component.css'
+  styleUrls: ['./lista-videojuegos.component.css']
 })
 
-export class ListaVideojuegosComponent implements OnInit{
-
-  tiposVideojuego: string[] = ['Rol', 'Terror', 'FPS', 'TPS', 'Survival Horror', 'Aventura gráfica', 'RPG' ];
-  //videojuegos: {id:number, name:string, type:string, year: string, platform: string} []= [];
+export class ListaVideojuegosComponent implements OnInit {
+  tiposVideojuego: string[] = ['Rol', 'Terror', 'FPS', 'TPS', 'Survival Horror', 'Aventura gráfica', 'RPG'];
   videojuegos: Videojuego[] = [];
-
-  constructor (
-    private videogameService:VideogameServiceService,
-    private router: Router
-  ){}
-
+  plataformas: { id: number; nombreplataforma: string }[] = [];
   showModal: boolean = false;
-  selectedIndex: number | null = null; 
+  selectedIndex: number | null = null;
+  showEditForm: { [key: number]: boolean } = {};  
 
-
-  // metodo para añadir un videojuego
+  constructor(
+    private videogameService: VideogameServiceService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.cargarVideojuegos();
   }
 
-  // Método para cargar los videojuegos desde la API
-  
-cargarVideojuegos(): void {
-  this.videogameService.getVideojuegos().pipe(  // Cambié getVideojuego() por getVideojuegos()
-    tap((response: Videojuego[]) => {           // Se espera un arreglo de videojuegos
-      this.videojuegos = response;
-      console.log(this.videojuegos);
-    }),
-    catchError((error) => {
-      console.error('Error al cargar los videojuegos:', error);
-      return of([]);  // Devolver un array vacío si hay un error
-    })
-  ).subscribe();
-}
-
-deleteVideojuegoPro(): void {
-  if (this.selectedIndex !== null) {
-    const videojuegoId = this.videojuegos[this.selectedIndex].id; // Obtener el id del videojuego seleccionado
-    this.videogameService.deleteVideojuego(videojuegoId).subscribe(
-      () => {
-        // Si la eliminación es exitosa, eliminar el videojuego de la lista local
-        if (this.selectedIndex !== null) {
-          this.videojuegos.splice(this.selectedIndex, 1); // Eliminar el videojuego de la lista
-          console.log("videojuego eliminado correctamente");
-          this.closeModal();
-        }
-      },
-      (error: any) => {
-        console.error('Error al eliminar el videojuego:', error);
-      }
-    );
+  cargarVideojuegos(): void {
+    this.videogameService.getVideojuegos().pipe(
+      tap((response: Videojuego[]) => {
+        this.videojuegos = response;
+        this.videojuegos.forEach(videojuego => {
+          this.showEditForm[videojuego.id] = false;
+        });
+      }),
+      catchError((error) => {
+        console.error('Error al cargar los videojuegos:', error);
+        return of([]);
+      })
+    ).subscribe();
   }
-}
-  
-  verVideojuego(id:number){
+
+  toggleEditForm(videojuegoId: number): void {
+    this.showEditForm[videojuegoId] = !this.showEditForm[videojuegoId];
+  }
+
+  editarVideojuego(videojuego: Videojuego): void {
+    this.videogameService.updateVideojuego(videojuego).subscribe(() => {
+      this.cargarVideojuegos();  
+      this.toggleEditForm(videojuego.id);  
+    });
+  }
+
+  deleteVideojuegoPro(): void {
+    if (this.selectedIndex !== null) {
+      const videojuegoId = this.videojuegos[this.selectedIndex].id;
+      this.videogameService.deleteVideojuego(videojuegoId).subscribe(
+        () => {
+          if (this.selectedIndex !== null) {
+            this.videojuegos.splice(this.selectedIndex, 1);
+            this.closeModal();
+          }
+        },
+        (error: any) => {
+          console.error('Error al eliminar el videojuego:', error);
+        }
+      );
+    }
+  }
+
+  verVideojuego(id: number) {
     this.router.navigate(['/videojuego', id]);
   }
 
-  /*editarVideojuego(id:number, name:string, type:string, year:string, platform:string, descripcion:string){
-    this.TiendaVideojuegosService.editarVideojuego(id, name, type, year, platform, descripcion);
-    this.router.navigate(['/editar_videojuego', id]);
-    this.closeModal();
-  }*/
-
-  openModal(index:number){
+  openModal(index: number): void {
     this.selectedIndex = index;
     this.showModal = true;
   }
 
-  closeModal () : void{
+  closeModal(): void {
     this.showModal = false;
     this.selectedIndex = null;
   }
-
-
 }
-
-
-
-

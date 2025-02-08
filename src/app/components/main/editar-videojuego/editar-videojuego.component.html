@@ -1,56 +1,60 @@
 <div class="padre-details">
 
-
     <div class="videojuego-edit-container">
 
         <div class="videojuego-edit-tarjeta">
     
-            <div class="header"> <!-- Contenedor para título y enlace -->
+            <div class="header">
                 <h4>EDITA TU VIDEOJUEGO</h4>
                 <div class="divAncla">
                     <a (click)="backToList()">X</a>
                 </div>
             </div>
     
-        <div class="inputs">
-            <div class="el1">
-                <label>Nombre VG :</label>
-                <input [(ngModel)]="videojuego.name" placeholder="Nombre">
-                
-            </div>
-            <div class="el2">
-                <label>Tipo Juego:</label>
-                <input [(ngModel)]="videojuego.type" placeholder="Tipo">
-            </div>
-            <div class="el3">
-                <label>Año Salida:</label>
-                <input [(ngModel)]="videojuego.year" placeholder="Año">
-                
-            </div>
-            <div class="el4">
-                <label>Plataforma:</label>
-                <input [(ngModel)]="videojuego.platform" placeholder="Plataforma">
-            </div>
-            <div class="el5">
-                <label>Opiniones :</label>
-                <input [(ngModel)]="videojuego.descripcion" placeholder="Descripción">
-            </div>
+            <div class="inputs">
+                <div class="el1">
+                    <label>Nombre VG :</label>
+                    <input [(ngModel)]="videojuego.name" placeholder="Nombre">
+                </div>
+
+                <div class="el2">
+                    <label>Tipo Juego:</label>
+                    <select [(ngModel)]="videojuego.type" placeholder="Tipo">
+                        <option *ngFor="let tipo of tiposVideojuego" [value]="tipo.nombre">{{ tipo.nombre }}</option>
+                    </select>
+                </div>
+
+                <div class="el3">
+                    <label>Año Salida:</label>
+                    <input [(ngModel)]="videojuego.year" placeholder="Año">
+                </div>
+
+                <div class="el4">
+                    <label>Plataforma:</label>
+                    <select [(ngModel)]="videojuego.platform" placeholder="Plataforma">
+                        <option *ngFor="let plataforma of plataformas" [value]="plataforma.nombreplataforma">{{ plataforma.nombreplataforma }}</option>
+                    </select>
+                </div>
+
+                <div class="el5">
+                    <label>Opiniones :</label>
+                    <input [(ngModel)]="videojuego.descripcion" placeholder="Descripción">
+                </div>
     
-            <button (click)="openModal()">
-                Guardar cambios
-            </button>
-        </div>
+                <button (click)="openModal()">
+                    Guardar cambios
+                </button>
+            </div>
             
         </div>
     
-    <div class="modal" *ngIf="showModal">
-        <div class="modalContenido">
-            <h3>Vas a Editar...</h3>
-            <p>Guardar Cambios ?</p>
-            <button (click)="editarVideojuego(videojuego.id, 
-            videojuego.name, videojuego.type, videojuego.year, 
-            videojuego.platform, videojuego.platform)">Sí, guardar.</button>
-            <button (click)="closeModal()">Mejor no.</button>
+        <div class="modal" *ngIf="showModal">
+            <div class="modalContenido">
+                <h3>Vas a Editar...</h3>
+                <p>Guardar Cambios ?</p>
+                <button (click)="editarVideojuego()">Sí, guardar.</button>
+                <button (click)="closeModal()">Mejor no.</button>
+            </div>
         </div>
     </div>
 </div>

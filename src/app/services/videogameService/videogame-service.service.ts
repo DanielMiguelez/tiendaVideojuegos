@@ -26,13 +26,19 @@ export class VideogameServiceService {
       return this.http.delete<void>(url); 
     }
   
-    updateVideojuego(id: number, data: Partial<Videojuego>): Observable<Videojuego> {
+    updateVideojuego(videojuego: Videojuego): Observable<Videojuego> {
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-      return this.http.put<Videojuego>(`${this.baseUrl}&id=${id}`, data, { headers });
+      return this.http.put<Videojuego>(this.baseUrl, videojuego, { headers });
     }
+    
 
     getVideojuegos(): Observable<Videojuego[]> {
       return this.http.get<Videojuego[]>(this.baseUrl); // Devuelve todos los videojuegos
+    }
+
+    getVideojuegoById(id: number): Observable<Videojuego[]> {
+      const url = `${this.baseUrl}&id=${id}`;  // Buscar por ID
+      return this.http.get<Videojuego[]>(url);
     }
 
     getVideojuego(nombre?: string): Observable<Videojuego[]> {
