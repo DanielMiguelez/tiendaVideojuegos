@@ -1,9 +1,10 @@
+
 export interface Videojuego {
   id: number;
   nombre: string;
-  tipo_id: number;  // Este es el ID del tipo (debería ser un número)
-  anyo: string;  // O Date, si usas una fecha completa
-  plataforma_id: number;  // Este es el ID de la plataforma (también un número)
+  tipo_id: number; // Asegúrate de agregar esta propiedad
+  anyo: number;    // O un tipo adecuado para la fecha, como Date
+  plataforma_id: number; // Asegúrate de agregar esta propiedad
   descripcion: string;
-  tipo_nombre: string;  // Nombre del tipo
+  tipo_nombre: string;
 }

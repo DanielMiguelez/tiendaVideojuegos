@@ -6,37 +6,25 @@
          <img src="../../../../media/Rage4.png" alt="">
      </div>
  </div>
- 
-<div class="addVideojuego">
-
+ <div class="addVideojuego">
     <h3>Add Videogame</h3>
 
     <form [formGroup]="form" (ngSubmit)="addVideojuego()"> 
-        <input #videojuegoName placeholder="Name" formControlName="name">
-
-        <select #videojuegoType formControlName="type">
+        <input placeholder="Nombre" formControlName="name">
+        
+        <select formControlName="type">
             <option *ngFor="let tipo of tiposVideojuego" [value]="tipo.id">{{ tipo.nombre }}</option>
         </select>
-
+    
+        <input placeholder="Año" formControlName="year">
         
-        <input #videojuegoYear placeholder="Year" formControlName="year">
-        <div *ngIf="form.get('year')?.invalid && form.get('year')?.touched">
-            <small *ngIf="form.get('year')?.errors?.['required']">El año es obligatorio.</small>
-            <small *ngIf="form.get('year')?.errors?.['pattern']">El año debe ser un número válido.</small>
-            <small *ngIf="form.get('year')?.errors?.['min']">El año debe ser mayor o igual a 1900.</small>
-            <small *ngIf="form.get('year')?.errors?.['max']">El año debe ser menor o igual a 2100.</small>
-        </div>
-
         <select formControlName="platform">
             <option *ngFor="let plataforma of plataformas" [value]="plataforma.id">{{ plataforma.nombreplataforma }}</option>
-          </select>
-          
-
-        <input #videojuegoDesc type="text" placeholder="Descripción" formControlName="descripcion">
-
-        <button type="submit" [disabled]="form.invalid" [ngClass]="form.valid ? 'valid-button' : 'default-button'">
-            Add videogame
-        </button>
+        </select>
+        
+        <input type="text" placeholder="Descripción" formControlName="descripcion">
+    
+        <button type="submit" [disabled]="form.invalid">Agregar videojuego</button>
     </form>
 
     <div *ngIf="showModal" class="modal" [ngClass]="form.valid ? 'valid-button' : 'default-button'">
@@ -46,9 +34,4 @@
             <button (click)="closeModal()">Aceptar</button>
         </div>
     </div>
-
-    <div class="hidden">
-       {{form.valid | json}}
-    </div>
-
 </div>

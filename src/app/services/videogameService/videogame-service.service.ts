@@ -16,7 +16,9 @@ export class VideogameServiceService {
   
     createVideojuego(videojuego: Videojuego): Observable<Videojuego> {
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-      return this.http.post<Videojuego>(this.baseUrl, videojuego, { headers });
+      // Convertir anyo a número (por si acaso)
+      const videojuegoData = { ...videojuego, anyo: Number(videojuego.anyo) };
+      return this.http.post<Videojuego>(this.baseUrl, videojuegoData, { headers });
     }
   
     deleteVideojuego(id: number): Observable<void> {

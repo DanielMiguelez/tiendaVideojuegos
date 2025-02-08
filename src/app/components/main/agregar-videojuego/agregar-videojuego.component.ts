@@ -57,32 +57,29 @@ export class AgregarVideojuegoComponent {
 
   addVideojuego() {
     if (this.form.valid) {
-      // Buscar el tipo seleccionado por su ID
       const tipoSeleccionado = this.tiposVideojuego.find(tipo => tipo.id === parseInt(this.form.value.type));
-      // Buscar la plataforma seleccionada por su ID
       const plataformaSeleccionada = this.plataformas.find(plataforma => plataforma.id === parseInt(this.form.value.platform));
   
       if (tipoSeleccionado && plataformaSeleccionada) {
         const videojuego: Videojuego = {
-          id: 0, // La base de datos se encargará de asignar un ID
-          nombre: this.form.value.name,
-          tipo_id: tipoSeleccionado.id, // Usamos el ID del tipo
-          anyo: this.form.value.year,
-          plataforma_id: plataformaSeleccionada.id, // Usamos el ID de la plataforma
-          descripcion: this.form.value.descripcion,
-          tipo_nombre: ''
+          id: 0,  // El backend se encargará de asignar un ID
+          nombre: this.form.value.name,  // Cambié 'name' a 'nombre'
+          tipo_id: tipoSeleccionado.id,  // Cambié 'tipo' a 'tipo_id'
+          anyo: Number(this.form.value.year),  // Se mantiene como 'anyo', ya que parece correcto
+          plataforma_id: plataformaSeleccionada.id,  // Cambié 'platform' a 'plataforma_id'
+          descripcion: this.form.value.descripcion,  // Se mantiene igual
+          tipo_nombre: tipoSeleccionado.nombre  // Esto es opcional, solo si el backend lo necesita
         };
   
-        console.log(videojuego);  // Asegúrate de ver el objeto en la consola
+        console.log(videojuego);  // Verifica que el objeto tiene las propiedades correctas
   
-        // Llamamos al servicio para crear el videojuego
         this.videogameService.createVideojuego(videojuego).subscribe(
-          (response) => {
-            console.log('Respuesta recibida:', response);  // Agrega este log para ver la respuesta
-            this.openModal(); // Abrimos el modal de éxito
+          response => {
+            console.log('Videojuego creado', response);
+            this.openModal();
           },
-          (error) => {
-            console.error('Error al añadir el videojuego:', error);
+          error => {
+            console.error('Error al agregar videojuego', error);
           }
         );
       } else {
