@@ -41,6 +41,11 @@ export class VideogameServiceService {
       return this.http.get<Videojuego[]>(url);
     }
 
+    getVideojuegoPorId(id: number): Observable<Videojuego> {
+      const url = `${this.baseUrl}&id=${id}`;  // Endpoint para obtener un videojuego por su ID
+      return this.http.get<Videojuego>(url);
+    }
+
     getVideojuego(nombre?: string): Observable<Videojuego[]> {
       const url = nombre ? `${this.baseUrl}&nombre=${nombre}` : `${this.baseUrl}`;
       return this.http.get<Videojuego[]>(url);

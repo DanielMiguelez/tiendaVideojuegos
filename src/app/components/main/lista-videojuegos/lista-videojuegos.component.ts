@@ -16,9 +16,9 @@ import { FormsModule } from '@angular/forms';  // Importa FormsModule
 })
 
 export class ListaVideojuegosComponent implements OnInit {
-  tiposVideojuego: string[] = ['Rol', 'Terror', 'FPS', 'TPS', 'Survival Horror', 'Aventura gráfica', 'RPG'];
   videojuegos: Videojuego[] = [];
   plataformas: { id: number; nombreplataforma: string }[] = [];
+
   showModal: boolean = false;
   selectedIndex: number | null = null;
   showEditForm: { [key: number]: boolean } = {};  

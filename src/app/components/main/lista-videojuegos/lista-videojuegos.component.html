@@ -8,61 +8,63 @@
 </div>
 
 <div class="lista">
-
+    <!-- Mensaje si no hay videojuegos -->
     <p *ngIf="videojuegos && videojuegos.length === 0">Hemos quebrado, no vendemos nada</p>
 
     <ul>
         <!-- Recorremos el array 'videojuegos' -->
         <li *ngFor="let videojuego of videojuegos; let i = index">
-            {{videojuego.nombre}} <br>  <!-- Cambiado 'name' a 'nombre' -->
-            Tipo: {{videojuego.tipo_nombre}} <br>  <!-- Cambiado 'type' a 'tipo_nombre' -->
-            Año: {{videojuego.anyo}} <br>  <!-- Cambiado 'year' a 'anyo' -->
+            <div>
+                <h3>{{ videojuego.nombre }}</h3> <!-- Nombre del videojuego -->
+                <p>Tipo: {{ videojuego.tipo_nombre }}</p> <!-- Tipo del videojuego -->
+                <p>Año: {{ videojuego.anyo }}</p> <!-- Año del videojuego -->
 
-             <!-- Botón para editar -->
-             <button (click)="toggleEditForm(videojuego.id)">
-                Editar
-            </button>
+                <!-- Botón para editar -->
+                <button (click)="toggleEditForm(videojuego.id)">
+                    Editar
+                </button>
 
-            <button (click)="openModal(i)">
-                <i class="fas fa-trash"></i> 
-            </button>
+                <!-- Botón para eliminar -->
+                <button (click)="openModal(i)">
+                    <i class="fas fa-trash"></i>
+                </button>
 
-            <button id="detail-button" (click)="verVideojuego(videojuego.id)">Detalles</button>
-            <!--<button id="detail-button" (click)="editarVideojuego(videojuego.id, videojuego.nombre, videojuego.tipo_nombre, videojuego.anyo, videojuego.plataforma)">Editar</button>-->
+                <!-- Botón para ver detalles -->
+                <button id="detail-button" (click)="verVideojuego(videojuego.id)">Detalles</button>
 
-            <div *ngIf="showEditForm[videojuego.id]">
-                <form (ngSubmit)="editarVideojuego(videojuego)">
-                    <label>Nombre:</label>
-                    <input [(ngModel)]="videojuego.nombre" name="nombre" required />
+                <!-- Formulario de edición, visible cuando showEditForm[videojuego.id] es verdadero -->
+                <div *ngIf="showEditForm[videojuego.id]">
+                    <form (ngSubmit)="editarVideojuego(videojuego)">
+                        <label>Nombre:</label>
+                        <input [(ngModel)]="videojuego.nombre" name="nombre" required />
 
-                    <label>Tipo:</label>
-                    <input [(ngModel)]="videojuego.tipo_nombre" name="tipo_nombre" required />
+                        <label>Tipo:</label>
+                        <input [(ngModel)]="videojuego.tipo_nombre" name="tipo_nombre" required />
 
-                    <label>Año:</label>
-                    <input [(ngModel)]="videojuego.anyo" name="anyo" required />
+                        <label>Año:</label>
+                        <input [(ngModel)]="videojuego.anyo" name="anyo" required />
 
-                    <select [(ngModel)]="videojuego.plataforma_id" name="plataforma_id">
-                        <option *ngFor="let plataforma of plataformas" [value]="plataforma.id">
-                          {{ plataforma.nombreplataforma }}
-                        </option>
-                      </select>
+                        <select [(ngModel)]="videojuego.plataforma_id" name="plataforma_id">
+                            <option *ngFor="let plataforma of plataformas" [value]="plataforma.id">
+                                {{ plataforma.nombreplataforma }}
+                            </option>
+                        </select>
 
-                    <button type="submit">Guardar cambios</button>
-                    <button type="button" (click)="toggleEditForm(videojuego.id)">Cancelar</button>
-                </form>
+                        <button type="submit">Guardar cambios</button>
+                        <button type="button" (click)="toggleEditForm(videojuego.id)">Cancelar</button>
+                    </form>
+                </div>
             </div>
         </li>
     </ul>
 
     <!-- Modal de confirmación para eliminar -->
     <div class="modal" *ngIf="showModal">
-
         <div class="modal-content">
-            <p>¿Estás seguro de que deseas eliminar este videojuego?</p>
+            <span>¿Estás seguro de que deseas eliminar este videojuego?</span>
+            <br><br>
             <button (click)="deleteVideojuegoPro()">Sí</button>
             <button (click)="closeModal()">No</button>
         </div>
-        
     </div>
-
 </div>

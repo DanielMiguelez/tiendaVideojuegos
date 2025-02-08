@@ -1,6 +1,6 @@
 p{
     color: rgb(255, 0, 0);
-    font-size: 40px;
+    font-size: 12px;
     font-weight: 900;
 }
 
@@ -10,7 +10,7 @@ footer {
     color: #f0f0f0; /* Texto claro */
     padding: 40px 0;
     background-repeat: no-repeat;
-    height: 7vh;
+    height: 2vh;
     position: fixed;
     text-align: center;
     border-top: 5px solid #1c2e5a; 

@@ -1,155 +1,40 @@
-/* ESTILOS DE LA TARJETA DE EDITAR VIDEOJUEGO */
-
-.videojuego-edit-container{
-    margin: 10vh auto; /* Centrado vertical y horizontal */
-    backdrop-filter: blur(5px);
-    padding: 20px;
-    display: flex;
-    color: yellow;
-    text-transform: uppercase;
-    flex-direction: column;
-    height: auto;
-    align-items: center;
-    text-align: center;
-    width: 50vh;
-    border: 0px; 
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-}
-
-/*PARA ALINEAR LOS ELEMENTOS DENTRO */
-
-.videojuego-edit-tarjeta{
-    display: flex;
-    flex-direction: column;
-    width:100%
-}
-
-/* AQUI CONTROLO QUE ESTEN UNO AL LADO DEL OTRO */
-
-.el1 .el2 .el3 .el4 .el5{
-    width: 100%;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-/* CONTROLO LOS ESTILOS DE LOS INPUTS */
-
-.videojuego-edit-tarjeta input{
+/* ESTILOS DE LOS SELECT EN EL FORMULARIO DE EDICIÓN */
+.videojuego-edit-tarjeta select {
     width: 250px;
-    height: 20px;
+    height: 40px;
     border-radius: 10px;
     text-transform: uppercase;
-    color: rgb(255, 0, 0);
-    background-color: rgba(0, 0, 0, 0.365);
-    margin: 5px;
-    padding: 10px;
-    border: 0px
-}
-
-.videojuego-edit-tarjeta button{
-    width: 250px;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.35);
-    align-self: center;
-    border:0px;
-    text-transform: uppercase;
-    border-radius: 10px;
-    color: rgb(255, 0, 0);
-    transition: background-color 1s ease, transform 1s ease; 
-}
-.videojuego-edit-tarjeta button:hover{
-    background-color: rgb(255, 0, 0);
-    color: black;
-}
-
-.modal {
-    position: fixed; /* Hace que el modal se mantenga fijo en la pantalla */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
-    display: flex; /* Usar flex para centrar el contenido */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
-  
-  
-}
-
-.modalContenido {
-    background-color: rgb(224, 160, 121);
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px; /* Ancho del modal */
-    text-align: center; /* Centra el texto dentro del modal */
-}
-
-.modalContenido h3 {
-    margin: 0 0 10px; /* Espaciado del título */
-}
-
-.modalContenido p {
-    margin: 10px 0; /* Espaciado del párrafo */
-}
-
-.modalContenido button {
-    margin: 5px; /* Espaciado entre botones */
-    padding: 10px;
-    background-color: rgb(52, 52, 181);
-    color: rgb(229, 254, 0);
-    border: 2px solid yellow;
-    border-radius: 5px;
-}
-
-.modalContenido button:hover{
-    background-color: rgb(165, 164, 79);
-    color: blue;
-}
-
-a{
-    background-color: red;
-    padding: 5px;
-    width: 15px;
-    display: flex;
-    align-items: center;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(255, 234, 0, 0.6); 
-   
-}
-a:hover{
-    background-color: rgb(216, 44, 44);
+    color: #ffeb3b;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro */
+    margin: 10px;
+    padding: 12px;
+    border: 2px solid #ffeb3b; /* Borde amarillo brillante */
+    box-shadow: 0 4px 12px rgba(255, 0, 255, 0.5); /* Sombra morada */
+    transition: all 0.3s ease;
+    font-size: 16px;
     cursor: pointer;
-    border: 2px solid black;
 }
 
-.inputs {
-    display: flex;
-    flex-direction: column; /* Coloca los inputs en columna */
-    gap: 15px; /* Espacio entre los campos */
-    margin-top: 5vh;
-    width: 100%; /* Ocupa todo el ancho del contenedor */
+/* Estilo para cuando el select tiene foco */
+.videojuego-edit-tarjeta select:focus {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid #ff00ff; /* Borde morado cuando el select tiene foco */
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.8); /* Sombra más prominente */
+    color: #ffeb3b;
 }
 
-.inputs label {
-    text-align: left; /* Alinea las etiquetas a la izquierda */
+/* Opciones dentro del select */
+.videojuego-edit-tarjeta select option {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffeb3b;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 8px;
+    border: none;
 }
 
-
-.header{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-}
-.header h2{
-    color: yellow;
-    font-size: 40px;
-}
-
-.header h4 {
-    margin: 0; /* Elimina margen para alineación perfecta */
-    color: yellow; /* Color del título */
-    font-size: 24px; /* Ajusta el tamaño del título según sea necesario */
+/* Efecto de hover en las opciones del select */
+.videojuego-edit-tarjeta select option:hover {
+    background-color: rgba(255, 0, 255, 0.8); /* Color de fondo morado al pasar el mouse */
+    color: #000; /* Color de texto negro al pasar el mouse */
 }

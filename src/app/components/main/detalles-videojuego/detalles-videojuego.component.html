@@ -1,21 +1,19 @@
-<div class="padre-details">
-
-<div class="videojuego-detail-container">
-
-    <div class="header">
-        <h2>Más Informacion</h2>
-    </div>
-
-    <div class="videojuego-detalles-tarjeta">
-
-        <p>Nombre Videojuego :</p>  {{videojuego.name}}
-        <p>Tipo Videojuego : </p> {{videojuego.type}}
-        <p>Descripción :</p>{{videojuego.descripcion}}
-        <a routerLink="/list">Volver a la lista</a>
-
-        <div *ngIf="!videojuego">
-            <p>Videojuego no encontrado.</p>
-        </div>
-    </div>
+<div *ngIf="cargando" class="loading">
+    <p>Cargando detalles del videojuego...</p>
+  </div>
+<div class="titulo">
+  
+  <h2>Detalles del VIDEOJUEGO</h2>
 </div>
-
+  
+  <div *ngIf="!cargando && videojuego" class="videojuego-details">
+    <h2>{{ videojuego?.nombre }}</h2>
+    <p><strong>Tipo:</strong> {{ videojuego?.tipo_nombre }}</p>
+    <p><strong>Año:</strong> {{ videojuego?.anyo }}</p>
+    
+  </div>
+  
+  <!-- Si ocurre un error -->
+  <div *ngIf="error" class="error">
+    <p>{{ error }}</p>
+  </div>

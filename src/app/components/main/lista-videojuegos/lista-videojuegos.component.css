@@ -1,111 +1,185 @@
-.lista{
+/* Lista general */
+.lista {
     border-radius: 20px;
-    padding: 20px;
-    margin: 10px;
+    padding: 30px;
+    margin: 20px;
     text-align: center;
-    text-align: center;
-    max-height: 677px;  /* Ajusta esta altura según necesites */
+    max-height: 677px;
     overflow-y: auto;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    position: relative;
 }
 
-.images{
+/* Estilo de las imágenes */
+.images {
     display: flex;
-    gap: 60vh;
+    gap: 20px;  /* Ajustamos el espacio entre las imágenes */
+    justify-content: center; /* Centra las imágenes */
 }
 
-.imageTest{
-    background-image: url(../../../../media/Rage1.png);
-    height: 50px;
-    width: 50px;
+.imageTest,
+.imageTest2 {
+    background-size: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.imageTest2{
-    background-image: url(../../../../media/Rage4.png);
-    height: 30px;
-    width: 30px;
-}
-
-ul{
+/* Estilo de la lista de videojuegos */
+ul {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px; /* Espacio entre los elementos de la lista */
 }
 
-li{
-    backdrop-filter: blur(5px);
-    box-shadow: 0 2px 18px rgba(255, 0, 251, 0.5);
-    color: #ffee00; /* Texto negro */
-    padding: 10px;
+/* Estilo de cada item de la lista */
+li {
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 20px rgba(255, 0, 251, 0.6);
+    color: #ffee00;
+    padding: 20px;
     font-weight: bold;
-    margin: 5px;
-    width: 25%;
-    border-radius: 5px;
+    margin: 15px 0;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 12px;
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    border: 0px;
+    gap: 20px;
     align-items: center;
+    transition: all 0.3s ease;
 }
 
-button{
-    display: inline-block; /* Permite que el botón tenga dimensiones específicas */
-    padding: 6px; /* Espaciado interno */
-    font-size: 15px; /* Tamaño de la fuente */
-    font-weight: bold; /* Texto en negrita */
-    text-align: center; /* Centra el texto */
-    text-decoration: none; /* Sin subrayado */
-    color: #ffffff; /* Color del texto */
-    background-color: #0000006e; /* Color de fondo del botón */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
-    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    width: 35%;
-    border:0px;
+/* Hover en la lista */
+li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(255, 0, 251, 0.8);
 }
+
+/* Estilo de los botones dentro de la lista */
+button {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #000000;  /* Fondo oscuro para los botones */
+    border: 2px solid #ffeb3b;  /* Borde amarillo brillante */
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: auto;
+    margin: 10px;
+}
+
 button:hover {
-    background-color: #9d00ff;
-    color: rgb(0, 0, 0);
-    
+    background: linear-gradient(135deg, #9d00ff, #ffeb3b); /* Gradiente al pasar el mouse */
+    color: #000000;
+    transform: scale(1.1); /* Escalado suave al hacer hover */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
 }
 
- 
+button:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(255, 235, 59, 0.7); /* Efecto de enfoque amarillo */
+}
+
+/* Estilo del modal */
 .modal {
-    position: fixed; /* Hace que el modal se mantenga fijo en la pantalla */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
-    display: flex; /* Usar flex para centrar el contenido */
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
-    background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco semi-transparente */
-    backdrop-filter: blur(10px); 
+    z-index: 1000;
 }
 
 .modalContenido {
-    background-color: rgb(1, 65, 169);
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px; /* Ancho del modal */
-    text-align: center; /* Centra el texto dentro del modal */
+    background-color: #001c56; /* Fondo oscuro del modal */
+    padding: 30px;
+    border-radius: 15px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
 }
 
 .modalContenido h3 {
-    margin: 0 0 10px; /* Espaciado del título */
+    color: #ffeb3b;
+    margin: 0 0 15px;
 }
 
 .modalContenido p {
-    margin: 10px 0; /* Espaciado del párrafo */
+    color: #fff;
+    margin: 10px 0;
 }
 
 .modalContenido button {
-    margin: 5px; /* Espaciado entre botones */
+    margin: 15px;
+    padding: 12px 30px;
+    background-color: #ffeb3b;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
-/* IMAGE DECORATION */
+.modalContenido button:hover {
+    background: linear-gradient(135deg, #ffeb3b, #ff5722);
+    color: #000;
+    transform: scale(1.05);
+}
 
+/* IMAGEN DECORATIVA */
+.imageTest, .imageTest2 {
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+/* Efecto de neón en el texto */
+span {
+    font-size: 22px; /* Tamaño del texto */
+    color: #ff0000; /* Color rojo brillante */
+    text-shadow: 
+        0 0 5px #ff0000, 
+        0 0 10px #ff0000, 
+        0 0 20px #ff0000, 
+        0 0 40px #ff0000, 
+        0 0 80px #ff0000, 
+        0 0 90px #ff0000, 
+        0 0 100px #ff0000, 
+        0 0 150px #ff0000; /* Efecto de resplandor (glow) en rojo */
+    font-weight: bold; /* Negrita para mayor impacto */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo oscuro para resaltar el texto */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: text-shadow 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto al pasar el ratón (hover) */
+span {
+    text-shadow: 
+        0 0 15px #ff0000, 
+        0 0 25px #ff0000, 
+        0 0 50px #ff0000, 
+        0 0 100px #ff0000, 
+        0 0 150px #ff0000, 
+        0 0 200px #ff0000, 
+        0 0 250px #ff0000; /* Intensificación del resplandor al pasar el ratón */
+    transform: scale(1.1); /* Aumento del tamaño al pasar el ratón */
+}

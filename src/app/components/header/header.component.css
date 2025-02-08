@@ -1,36 +1,77 @@
-header{
-    width: 100%;
-    background: url(../../../media/SoR.jpg);
-    background-position: center;
-    background-size: cover;
+/* Estilo del header */
+header {
+    background: linear-gradient(135deg, #6a1b9a, #000000); /* Gradiente morado y negro */
+    padding: 20px 0;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Sombra para un look más futurista */
+    text-align: center;
 }
 
-.enlaces{
-    width: 100vh; /* Ancho máximo del contenedor */
-    margin: 20px auto; /* Centrar el contenedor en la página */
-    padding: 10px; /* Espaciado interno */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
-    text-align: center; /* Centrar el contenido dentro del contenedor */
-    display: flex; /* Usar flexbox para distribuir los enlaces */
-    justify-content: space-around; /* Espacio entre los enlaces */
-    
-
+/* Estilo de los enlaces (botones) */
+.enlaces {
+    display: flex;
+    justify-content: center;
+    gap: 5em;  /* Espacio entre los botones */
 }
 
-.enlaces button{
-    all: unset;
+.enlaces button {
+    background: transparent;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 2px solid #fff;  /* Borde blanco */
+    padding: 12px 25px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    outline: none;
     text-transform: uppercase;
-    background-color: rgb(37, 35, 25);
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 5px solid black;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    margin: 10px;
-    font-weight: 900;
-    color: rgb(255, 200, 0);
-    cursor:pointer
+    position: relative;
+    overflow: hidden;  /* Para que el efecto de hover no se salga del borde */
 }
-.enlaces button:hover{
-    background-color: rgba(144, 0, 247);
+
+/* Efecto al pasar el cursor (hover) */
+.enlaces button:hover {
+    background: linear-gradient(135deg, #ffeb3b, #f44336); /* Gradiente amarillo y rojo */
+    color: #000;  /* Cambia el color del texto a negro */
+    transform: scale(1.1);  /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 0 15px rgba(255, 235, 59, 0.7); /* Resplandor amarillo */
+}
+
+/* Subrayado con animación al hacer hover */
+.enlaces button:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: #fff;
+    bottom: -8px;
+    left: 0;
+    transform: scaleX(0);
+    animation: slide 0.3s forwards;
+}
+
+/* Animación de subrayado */
+@keyframes slide {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+/* Efecto de enfoque (focus) en los botones */
+.enlaces button:focus {
+    outline: none;
+    box-shadow: 0 0 12px 3px rgba(255, 235, 59, 0.9); /* Brillo amarillo intenso al enfocar */
+}
+
+/* Responsive: Asegurarse de que los botones se ajusten en pantallas pequeñas */
+@media (max-width: 768px) {
+    .enlaces {
+        flex-direction: column;  /* Apilar los botones verticalmente */
+        gap: 15px;
+    }
+
+    .enlaces button {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
 }

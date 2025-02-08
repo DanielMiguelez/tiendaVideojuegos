@@ -1,73 +1,162 @@
-h2 {
-    text-transform: uppercase;
-    color: rgb(255, 221, 0);
-}
-
-p{
-    color: rgb(255, 221, 0);
-}
-
-
-a{
-    all: unset;
-    color: blue;
-    cursor: pointer;
-    background-color: aliceblue;
-    padding: 5px;
-    font-weight: bold;
-    border-radius: 10px;
-}
-
-a:hover{
-    color: rgb(10, 82, 82);
-}
-
-.videojuego-detail-container {
-    margin: 10vh auto; /* Centrado vertical y horizontal */
-    backdrop-filter: blur(5px);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    height: 40vh;
-    align-items: center;
+/* Contenedor del título */
+.titulo {
     text-align: center;
-    width: 50vh;
-    border: 0px; /* Bordes ligeramente transparentes */
-    border-radius: 15px; /* Esquinas redondeadas */
-    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6); /* Sombra más suave y profesional */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
-}
-
-.videojuego-detail-container:hover {
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8); /* Sombra más fuerte al hacer hover */
-}
-.videojuego-detalles-tarjeta{
-    display: flex;
-    flex-direction: column;
-    color: white;
-}
-
-.videojuego-detalles-tarjeta p{
-    color: rgb(255, 191, 0);
-}
-
-.videojuego-detalles-tarjeta a{
     margin-top: 50px;
-    background-color: #06060669;
-    color: rgb(157, 0, 255);
-    padding: 10px;
-    border: 0px;
-    transition: background-color 1s ease, transform 1s ease; 
-}
-
-.videojuego-detalles-tarjeta a:hover{
-    
-    background-color: rgba(136, 0, 255, 0.472);
-}
-
-.padre-details{
-    height:100vh;
+    margin-bottom: 20px;
+  }
+  
+  /* Efectos para el título */
+  .titulo h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4); /* Sombra del texto para un toque futurista */
+    animation: glow 1.5s ease-in-out infinite alternate; /* Animación para el resplandor */
+  }
+  
+  /* Animación de resplandor para el título */
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 5px #4a90e2, 0 0 10px #4a90e2, 0 0 15px #4a90e2, 0 0 20px #4a90e2;
+      color: #fff;
+    }
+    50% {
+      text-shadow: 0 0 10px #ff5c8d, 0 0 20px #ff5c8d, 0 0 30px #ff5c8d, 0 0 40px #ff5c8d;
+      color: #f0f0f0;
+    }
+    100% {
+      text-shadow: 0 0 15px #4a90e2, 0 0 30px #4a90e2, 0 0 40px #4a90e2, 0 0 50px #4a90e2;
+      color: #fff;
+    }
+  }
+  
+  /* Estilo del mensaje de carga */
+  .loading {
     display: flex;
     justify-content: center;
-}
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    color: white;
+    text-align: center;
+  }
+  
+  .loading p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    animation: spin 1.5s infinite linear;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6); /* Sombra para texto */
+  }
+  
+  /* Animación de carga (giro) */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Estilo para el mensaje de error */
+  .error {
+    color: white;
+    background-color: #f44336; /* Rojo */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 1.4rem;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Contenedor principal de detalles */
+.videojuego-details {
+    background: linear-gradient(135deg, #2e3c56, #4a90e2); /* Gradiente futurista */
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    max-width: 700px; /* Limitar el ancho */
+    margin: 50px auto; /* Centrado en la pantalla */
+    text-align: center; /* Centrado del texto */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Borde fino */
+  }
+  
+  /* Estilo del título principal */
+  .videojuego-details h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Efecto de sombra */
+  }
+  
+  /* Estilo de los detalles del videojuego */
+  .videojuego-details p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin: 10px 0;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Sombra sutil */
+  }
+  
+  /* Estilo para el mensaje de carga */
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    color: white;
+    text-align: center;
+  }
+  
+  .loading p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    animation: spin 1.5s infinite linear;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6); /* Sombra para texto */
+  }
+  
+  /* Animación de carga (giro) */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Estilo para el mensaje de error */
+  .error {
+    color: white;
+    background-color: #f44336; /* Rojo */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 1.4rem;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  
