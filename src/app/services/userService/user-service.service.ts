@@ -36,6 +36,12 @@ export class UserServiceService {
       return this.http.get(url);
     }
 
+    /*loginUser(email: string, password: string): Observable<any> {
+      const loginData = { email, password };
+      const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+  
+      // Realizamos la solicitud POST al endpoint de login
+      return this.http.post<any>('https://c74f4156107e.ngrok.app/api/daniel/videojuegos.php', loginData, { headers });*/
+    }
     
-}
 
